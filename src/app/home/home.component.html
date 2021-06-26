@@ -1,0 +1,10 @@
+<!-- TO DO - Desktop target blank, mobile abre na tela -->
+
+<ul>
+    <li *ngFor="let property of (properties$ | async); let i = index">
+        <h1>
+            {{i}}
+            {{property.id}}
+        </h1>
+    </li>
+</ul>
