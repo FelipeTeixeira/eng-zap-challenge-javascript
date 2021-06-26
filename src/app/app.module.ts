@@ -5,29 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
-import { PropertyResolver } from './services/property.resolver';
+import { PropertyResolver } from './shared/services/property.resolver';
 import { HttpClientModule } from '@angular/common/http';
-import { PropertyService } from './services/property.service';
-import { AppShellNoRenderDirective } from './directives/app-shell-norender.directive';
-import { AppShellRenderDirective } from './directives/app-shell-render.directive';
+import { PropertyService } from './shared/services/property.service';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent,
-        AppShellRenderDirective,
-        AppShellNoRenderDirective
+        HomeComponent
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'serverApp' }),
         BrowserTransferStateModule,
         BrowserAnimationsModule,
         AppRoutingModule,
-        HttpClientModule
-    ],
-    providers: [
-        PropertyService,
-        PropertyResolver
+        HttpClientModule,
+
+        SharedModule
     ],
     bootstrap: [AppComponent]
 })

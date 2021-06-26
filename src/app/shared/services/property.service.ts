@@ -11,6 +11,7 @@ export class PropertyService {
     constructor(private http: HttpClient) { }
 
     findAll(): Observable<Property[]> {
-        return this.http.get<Property[]>(`${PropertyService.API_URL}source-1.json`);
+        return this.http.get<Property[]>(`${PropertyService.API_URL}source-sample.json`);
+        // return this.http.get<Property[]>(`${PropertyService.API_URL}source-1.json`);
     }
 }
