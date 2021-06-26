@@ -1,10 +1,6 @@
 <!-- TO DO - Desktop target blank, mobile abre na tela -->
-
 <ul>
-    <li *ngFor="let property of (properties$ | async); let i = index">
-        <h1>
-            {{i}}
-            {{property.id}}
-        </h1>
+    <li *ngFor="let property of (properties$ | async) | slice:0:10; let i = index">
+        <app-gallery [photos]="property.images"></app-gallery>
     </li>
 </ul>

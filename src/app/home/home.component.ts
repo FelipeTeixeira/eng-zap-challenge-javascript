@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Title } from '@angular/platform-browser';
-import { PropertyService } from '../services/property.service';
-import { Property } from '../model/property';
+import { PropertyService } from '../shared/services/property.service';
+import { Property } from '../shared/model/property';
 
 @Component({
     selector: 'home',
