@@ -1,17 +1,15 @@
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
+import { PropertyModule } from './modules/property/property.module';
 
 @NgModule({
     declarations: [
-        AppComponent,
-        HomeComponent
+        AppComponent
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -19,10 +17,9 @@ import { SharedModule } from './shared/shared.module';
         BrowserAnimationsModule,
         AppRoutingModule,
         HttpClientModule,
-
-        SharedModule
+        SharedModule,
+        PropertyModule
     ],
     bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }

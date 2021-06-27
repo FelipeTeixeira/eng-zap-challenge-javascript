@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { NgModule, DEFAULT_CURRENCY_CODE } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+import { LOCALE_ID } from '@angular/core';
 
 // MODULES
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -9,16 +12,23 @@ import { AppShellNoRenderDirective } from './directives/app-shell-norender.direc
 import { AppShellRenderDirective } from './directives/app-shell-render.directive';
 
 // COMPONENTS
+import { HeaderComponent } from './components/header/header.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+
+// PROVIDERS
 import { PropertyService } from './services/property.service';
 import { PropertyResolver } from './services/property.resolver';
+import { RegrasUtils } from './utils/regras.util';
+
+registerLocaleData(localePt)
 
 const modules = [
-    CarouselModule
+    CarouselModule,
 ];
 
 const components = [
-    GalleryComponent
+    HeaderComponent,
+    GalleryComponent,
 ];
 
 const directives = [
@@ -26,9 +36,10 @@ const directives = [
     AppShellNoRenderDirective
 ];
 
-const services = [
+const providers = [
     PropertyService,
-    PropertyResolver
+    PropertyResolver,
+    RegrasUtils
 ]
 
 @NgModule({
@@ -38,14 +49,22 @@ const services = [
     ],
     declarations: [
         ...components,
-        ...directives
+        ...directives,
     ],
     exports: [
         ...components,
         ...directives
     ],
     providers: [
-        ...services
+        ...providers,
+        {
+            provide: LOCALE_ID,
+            useValue: 'pt-BR'
+        },
+        {
+            provide: DEFAULT_CURRENCY_CODE,
+            useValue: 'BRL'
+        },
     ],
 })
 export class SharedModule { }

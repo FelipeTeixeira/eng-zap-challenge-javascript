@@ -15,24 +15,26 @@ export interface Address {
 }
 
 export interface PricingInfos {
-    yearlyIptu: string;
     price: string;
     businessType: string;
-    monthlyCondoFee: string;
+    monthlyCondoFee?: string;
+    yearlyIptu?: string;
+    period?: string;
+    rentalTotalPrice?: string;
 }
 
 export interface Property {
     usableAreas: number;
     listingType: string;
-    createdAt: Date;
+    createdAt: string;
     listingStatus: string;
     id: string;
-    parkingSpaces: number;
-    updatedAt: Date;
+    updatedAt: string;
     owner: boolean;
     images: string[];
     address: Address;
     bathrooms: number;
     bedrooms: number;
     pricingInfos: PricingInfos;
+    parkingSpaces?: number;
 }

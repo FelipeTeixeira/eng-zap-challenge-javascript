@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Title } from '@angular/platform-browser';
-import { PropertyService } from '../shared/services/property.service';
-import { Property } from '../shared/model/property';
+import { PropertyService } from '../../../shared/services/property.service';
+import { Property } from '../../../shared/model/property';
 
 @Component({
     selector: 'home',
@@ -10,7 +10,6 @@ import { Property } from '../shared/model/property';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
     properties$: Observable<Property[]>;
 
     constructor(
@@ -19,8 +18,5 @@ export class HomeComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        // TO DO - nome pagina
-        this.title.setTitle('nome');
-        this.properties$ = this.propertyService.findAll();
     }
 }
