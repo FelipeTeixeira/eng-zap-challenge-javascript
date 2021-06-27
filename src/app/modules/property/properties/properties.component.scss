@@ -1,0 +1,55 @@
+$space: 16px;
+
+ul {
+    margin: auto;
+    padding: $space;
+
+    li {
+        background-color: #fff;
+        margin: $space 0;
+        border-radius: 4px;
+        list-style: none;
+
+        overflow: hidden;
+
+        .body {
+            padding: $space;
+            position: relative;
+        }
+    }
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.condominio {
+    font-size: 13px;
+}
+
+
+// TO DO - criar componente
+.usableAreas {
+    font-size: 11px;
+    line-height: 14px;
+    color: #406367;
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+
+    img {
+        margin-right: 4px;
+    }
+}
+
+.businessType {
+    font-size: 11px;
+    color: rgb(127, 151, 153);
+    position: absolute;
+    top: $space;
+    right: $space;
+}
+
+
+// TO DO - depois alterar a cor de todos esses lugares = #002F34
