@@ -1,0 +1,51 @@
+<app-gallery [photos]="property.images"></app-gallery>
+<section>
+    <p *ngIf="property.address.city">
+        {{ property.address.city }}, {{ property.address.neighborhood }}
+    </p>
+    <ng-container *ngIf="property.pricingInfos as pricingInfos">
+        {{pricingInfos.period}} <br>
+        {{pricingInfos.yearlyIptu}} <br>
+        {{pricingInfos.price}} <br>
+        {{pricingInfos.rentalTotalPrice}} <br>
+        {{pricingInfos.businessType}} <br>
+        {{pricingInfos.monthlyCondoFee}} <br>
+    </ng-container>
+</section>
+
+<section>
+    <h2>
+        Detalhes
+    </h2>
+    <ul class="details">
+        <li>
+            <figure>
+                <img src="assets/img/icon-area.svg" />
+            </figure>
+            {{property.usableAreas}} m²
+        </li>
+        <li>
+            <figure>
+                <img src="assets/img/icon-bathroom.svg" />
+            </figure>
+            {{property.bathrooms}} Banheiro
+        </li>
+        <li>
+            <figure>
+                <img src="assets/img/icon-bed.svg" />
+            </figure>
+            {{property.bedrooms}} Quartos
+        </li>
+        <li>
+            <figure>
+                <img src="assets/img/icon-car.svg" />
+            </figure>
+            {{property.parkingSpaces}} Vagas
+        </li>
+    </ul>
+</section>
+<!--
+    https://dribbble.com/shots/13912694-Real-Estate-Mobile-App
+    tela do produto = https://dribbble.com/shots/14684250-Property-Mobile-App-Exploration
+    tela do produto FACILIDATE = https://dribbble.com/shots/11602156-Rent-a-properties-Mobile-app
+ -->

@@ -6,12 +6,14 @@ import { HomeComponent } from './home/home.component';
 import { PropertyComponent } from './property.component';
 import { RouterModule } from '@angular/router';
 import { PropertiesComponent } from './properties/properties.component';
+import { PropertyDetailsComponent } from './property-details/property-details.component';
 
 @NgModule({
     declarations: [
         HomeComponent,
         PropertyComponent,
         PropertiesComponent,
+        PropertyDetailsComponent,
     ],
     imports: [
         CommonModule,
