@@ -1,31 +1,118 @@
+$space: 16px;
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    padding: 16px;
+
+    a {
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 34px;
+        width: 34px;
+
+        background: rgb(242 244 245 / 80%);
+    }
+}
+
 section {
-    background-color: #fff;
+    position: relative;
+    border-top: 1px solid #f2f4f5;
+    margin: 0 $space;
+    padding: $space 0;
+
+    &:empty {
+        display: none;
+    }
+}
+
+.price {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.businessType {
+    font-size: 11px;
+    color: rgb(127, 151, 153);
+    position: absolute;
+    top: $space;
+    right: $space;
+}
+
+.condominio {
+    font-size: 13px;
+}
+
+// TO DO - criar componente
+.address {
+    font-size: 11px;
+    line-height: 14px;
+    color: #406367;
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+
+    img {
+        margin-right: 4px;
+    }
+}
+
+.publicado {
+    color: rgb(0 0 0 / 40%);
 }
 
 .details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 16px;
+    &__title {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
 
-    li {
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: $space;
+    }
+
+    &__item {
         font-size: 14px;
         color: #406367;
         display: flex;
         align-items: center;
-    }
 
-    figure {
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
-        background-color: #f2f4f5;
+        &__icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background-color: #f2f4f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+
+            img {
+                width: 22px;
+            }
+        }
+    }
+}
+
+.pricingInfos {
+    li {
+        font-size: 14px;
+        list-style: none;
         display: flex;
         align-items: center;
-        justify-content: center;
-        margin-right: 8px;
+        justify-content: space-between;
+        color: #406367;
 
-        img {
-            width: 22px;
+        strong {
+            color: #000;
         }
     }
 }

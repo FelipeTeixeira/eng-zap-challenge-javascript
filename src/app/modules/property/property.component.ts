@@ -8,17 +8,11 @@ import { PropertiesComponent } from './properties/properties.component';
     styleUrls: ['./property.component.scss']
 })
 export class PropertyComponent implements OnInit {
-    selectedCompany: 'zap-imoveis' | 'viva-real' = 'viva-real';
-
-    constructor(
-        private activatedRoute: ActivatedRoute
-    ) { }
+    constructor() { }
 
     ngOnInit(): void {
     }
 
     onActivate(event: PropertiesComponent) {
-        // ActivatedRoute
-        // console.log(event);
     }
 }

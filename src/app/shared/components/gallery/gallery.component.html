@@ -3,12 +3,13 @@
     <ng-container *ngFor="let photo of photos; let i = index">
         <ng-template carouselSlide [id]="i">
             <figure class="gallery">
-                <img
+                <!-- <img
                     class="gallery__photo"
                     loading="lazy"
-                    [src]="'http://grupozap-code-challenge.s3-website-us-east-1.amazonaws.com/images/pic10.jpg'">
+                    [src]="'http://grupozap-code-challenge.s3-website-us-east-1.amazonaws.com/images/pic10.jpg'"> -->
+                <img class="gallery__photo" loading="lazy" [src]="photo">
             </figure>
-            <!-- <img loading="lazy" [src]="photo"> -->
+
             <!-- TO DO - [alt]="slide.alt" [title]="slide.title" -->
         </ng-template>
     </ng-container>

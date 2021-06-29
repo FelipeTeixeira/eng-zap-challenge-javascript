@@ -1,5 +1,9 @@
 $space: 16px;
 
+.page {
+    background-color: #f2f4f5;
+}
+
 ul {
     margin: auto;
     padding: $space;
@@ -9,12 +13,14 @@ ul {
         margin: $space 0;
         border-radius: 4px;
         list-style: none;
-
         overflow: hidden;
 
         .body {
             padding: $space;
             position: relative;
+            text-decoration: none;
+            color: #000;
+            display: block;
         }
     }
 }
@@ -27,7 +33,6 @@ ul {
 .condominio {
     font-size: 13px;
 }
-
 
 // TO DO - criar componente
 .usableAreas {
@@ -50,6 +55,5 @@ ul {
     top: $space;
     right: $space;
 }
-
 
 // TO DO - depois alterar a cor de todos esses lugares = #002F34

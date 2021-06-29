@@ -1,27 +1,15 @@
-<ul>
-    <li *ngFor="let property of properties | paginate: { itemsPerPage: 20, currentPage: page }" [id]="property.id">
-        <app-gallery [routerLink]="['/imovel/company/', property.id]" [photos]="property.images"></app-gallery>
+<app-header *ngIf="companySelected" [isZapImoveis]="true"></app-header>
 
-        <a class="body" [routerLink]="['/imovel/company/', property.id]">
-            <ng-container *ngIf="property.pricingInfos.businessType === 'SALE'">
+<section class="page">
+    <ul>
+        <li *ngFor="let property of properties | paginate: { itemsPerPage: 20, currentPage: page }" [attr.id]="property.id">
+            <app-gallery [routerLink]="['/empresa/', companySelected, property.id]" [photos]="property.images"></app-gallery>
+
+            <a class="body" [routerLink]="['/empresa/', companySelected, property.id]">
+
                 <strong class="price">
                     {{property.pricingInfos.price | currency}}
                 </strong>
-
-                <span class="businessType">
-                    Venda
-                </span>
-
-            </ng-container>
-
-            <ng-container *ngIf="property.pricingInfos.businessType === 'RENTAL'">
-                <p class="price">
-                    {{property.pricingInfos.price | currency}}
-                </p>
-
-                <span class="businessType">
-                    Aluguel
-                </span>
 
                 <p class="condominio">
                     Condominio:
@@ -29,26 +17,25 @@
                         {{property.pricingInfos.monthlyCondoFee | currency}}
                     </strong>
                 </p>
-            </ng-container>
 
-            <p *ngIf="property.address.city" class="usableAreas">
-                <img src="assets/img/icon-map.svg" alt="Ícone de localização" width="16" height="16">
-                {{property.address.city}}, {{property.address.neighborhood}}
-            </p>
+                <span class="businessType">
+                    {{property.pricingInfos.businessType === 'SALE' ? 'Venda' : 'Aluguel'}}
+                </span>
 
-            <p *ngIf="property.usableAreas" class="usableAreas">
-                <!-- TO DO - alterar essa imagem -->
-                <img src="assets/img/icon-area.svg" alt="Ícone de metragem do imóvel" width="16" height="16">
-                {{property.usableAreas}} m²
-            </p>
-        </a>
-    </li>
-</ul>
+                <p *ngIf="property.address.city" class="usableAreas">
+                    <img src="assets/img/icon-map.svg" alt="Ícone de localização" width="16" height="16">
+                    {{property.address.city}}, {{property.address.neighborhood}}
+                </p>
 
-<pagination-controls
-    maxSize="7"
-    previousLabel=""
-    nextLabel=""
-    autoHide="true"
-    (pageChange)="setPageSelect($event)">
-</pagination-controls>
+                <p *ngIf="property.usableAreas" class="usableAreas">
+                    <!-- TO DO - alterar essa imagem -->
+                    <img src="assets/img/icon-area.svg" alt="Ícone de metragem do imóvel" width="16" height="16">
+                    {{property.usableAreas}} m²
+                </p>
+            </a>
+        </li>
+    </ul>
+
+    <pagination-controls maxSize="7" previousLabel="" nextLabel="" autoHide="true" (pageChange)="setPageSelect($event)">
+    </pagination-controls>
+</section>
