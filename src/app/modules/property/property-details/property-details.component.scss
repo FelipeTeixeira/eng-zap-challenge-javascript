@@ -1,3 +1,5 @@
+@import "~src/assets/scss/variables";
+
 $space: 16px;
 
 header {
@@ -16,14 +18,13 @@ header {
         justify-content: center;
         height: 34px;
         width: 34px;
-
-        background: rgb(242 244 245 / 80%);
+        background: rgba($white-smoke, 0.8);
     }
 }
 
 section {
     position: relative;
-    border-top: 1px solid #f2f4f5;
+    border-top: 1px solid $white-smoke;
     margin: 0 $space;
     padding: $space 0;
 
@@ -33,27 +34,27 @@ section {
 }
 
 .price {
-    font-size: 26px;
+    font-size: $size-26;
     font-weight: bold;
 }
 
 .businessType {
-    font-size: 11px;
-    color: rgb(127, 151, 153);
+    font-size: $size-11;
+    color: $gray;
     position: absolute;
     top: $space;
     right: $space;
 }
 
 .condominio {
-    font-size: 13px;
+    font-size: $size-13;
 }
 
 // TO DO - criar componente
 .address {
-    font-size: 11px;
-    line-height: 14px;
-    color: #406367;
+    font-size: $size-11;
+    line-height: $size-14;
+    color: $green-dark;
     display: flex;
     align-items: center;
     margin-top: 8px;
@@ -64,12 +65,12 @@ section {
 }
 
 .publicado {
-    color: rgb(0 0 0 / 40%);
+    color: $black-40;
 }
 
 .details {
     &__title {
-        font-size: 16px;
+        font-size: $size-16;
         margin-bottom: 12px;
     }
 
@@ -80,8 +81,8 @@ section {
     }
 
     &__item {
-        font-size: 14px;
-        color: #406367;
+        font-size: $size-14;
+        color: $green-dark;
         display: flex;
         align-items: center;
 
@@ -89,7 +90,7 @@ section {
             width: 34px;
             height: 34px;
             border-radius: 50%;
-            background-color: #f2f4f5;
+            background-color: $white-smoke;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -104,15 +105,15 @@ section {
 
 .pricingInfos {
     li {
-        font-size: 14px;
+        font-size: $size-14;
         list-style: none;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        color: #406367;
+        color: $green-dark;
 
         strong {
-            color: #000;
+            color: $black;
         }
     }
 }

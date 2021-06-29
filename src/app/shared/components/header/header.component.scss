@@ -1,6 +1,8 @@
+@import "~src/assets/scss/variables";
+
 .header {
-    background-color: #fff;
-    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 24%);
+    background-color: $white;
+    box-shadow: 0 2px 8px 0 $shadow;
     height: 56px;
     position: relative;
     padding: 0 16px;
@@ -9,7 +11,7 @@
     justify-content: center;
 
     &__vivareal {
-        background-color: #1190cd;
+        background-color: $blue-vivareal;
     }
 }
 

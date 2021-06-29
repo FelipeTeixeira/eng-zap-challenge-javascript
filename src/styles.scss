@@ -1,3 +1,4 @@
+@import "~src/assets/scss/variables";
 @import "~ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
 @import "~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 
@@ -9,9 +10,14 @@
     box-sizing: border-box;
 }
 
+html{
+    font-size: 62,5%;
+}
+
 body {
-    font-family: "Nunito Sans", sans-serif;
-    color: #000;
+    font-family: $font;
+    font-size: $size-16;
+    color: $black;
 }
 
 img {
@@ -37,7 +43,7 @@ img {
                 padding: 8px 4px;
 
                 span {
-                    background: rgb(138 162 164 / 40%);
+                    background: rgba($white-smoke, 0.4);
                     transition: background-color 0.2s ease;
                     width: 8px;
                     height: 8px;
@@ -46,7 +52,7 @@ img {
 
                 &.active span,
                 &:hover span {
-                    background: #fff;
+                    background: $white;
                 }
             }
         }
@@ -65,7 +71,7 @@ ul.ngx-pagination {
     li {
         &.pagination-next,
         &.pagination-previous {
-            border: 1px solid #406367;
+            border: 1px solid $green-dark;
             border-radius: 4px;
             display: inline-flex;
 
@@ -122,7 +128,7 @@ ul.ngx-pagination {
             background: none;
 
             .show-for-sr + span {
-                background-color: #406367;
+                background-color: $green-dark;
                 border-radius: 50%;
             }
         }
