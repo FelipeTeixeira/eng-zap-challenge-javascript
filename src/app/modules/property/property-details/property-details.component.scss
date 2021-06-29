@@ -1,17 +1,15 @@
 @import "~src/assets/scss/variables";
 
-$space: 16px;
-
-header {
+.header {
     position: fixed;
     left: 0;
     top: 0;
     z-index: 2;
     width: 100%;
     display: flex;
-    padding: 16px;
+    padding: $space;
 
-    a {
+    &__button {
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -22,50 +20,48 @@ header {
     }
 }
 
-section {
+.section {
     position: relative;
     border-top: 1px solid $white-smoke;
     margin: 0 $space;
     padding: $space 0;
+}
 
-    &:empty {
-        display: none;
+.property {
+    &__price {
+        font-size: $size-26;
+        font-weight: bold;
     }
-}
 
-.price {
-    font-size: $size-26;
-    font-weight: bold;
-}
-
-.businessType {
-    font-size: $size-11;
-    color: $gray;
-    position: absolute;
-    top: $space;
-    right: $space;
-}
-
-.condominio {
-    font-size: $size-13;
-}
-
-// TO DO - criar componente
-.address {
-    font-size: $size-11;
-    line-height: $size-14;
-    color: $green-dark;
-    display: flex;
-    align-items: center;
-    margin-top: 8px;
-
-    img {
-        margin-right: 4px;
+    &__businessType {
+        font-size: $size-11;
+        color: $gray;
+        position: absolute;
+        top: $space;
+        right: $space;
     }
-}
 
-.publicado {
-    color: $black-40;
+    &__monthly-condo-fee {
+        font-size: $size-13;
+    }
+
+    // TO DO - criar componente
+    &__address {
+        font-size: $size-11;
+        line-height: $size-14;
+        color: $green-dark;
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+
+        img {
+            margin-right: 4px;
+        }
+    }
+
+    &__published {
+        color: $black-40;
+    }
 }
 
 .details {
@@ -103,8 +99,8 @@ section {
     }
 }
 
-.pricingInfos {
-    li {
+.pricingInfo {
+    &__item {
         font-size: $size-14;
         list-style: none;
         display: flex;

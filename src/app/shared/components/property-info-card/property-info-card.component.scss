@@ -1,39 +1,45 @@
 @import "~src/assets/scss/variables";
 
-.body {
-    padding: $space;
-    position: relative;
-    color: $black;
-    display: block;
-}
+.card-info {
+    background-color: $white;
+    border-radius: 4px;
+    list-style: none;
+    overflow: hidden;
 
-.price {
-    font-size: $size-20;
-    font-weight: bold;
-}
-
-.condominio {
-    font-size: $size-13;
-}
-
-// TO DO - criar componente
-.usableAreas {
-    font-size: $size-11;
-    line-height: 14px;
-    color: $green-dark;
-    display: flex;
-    align-items: center;
-    margin-top: 8px;
-
-    img {
-        margin-right: 4px;
+    &__body {
+        color: $black;
+        padding: $space;
+        position: relative;
     }
-}
 
-.businessType {
-    font-size: $size-11;
-    color: $gray;
-    position: absolute;
-    top: $space;
-    right: $space;
+    &__price {
+        font-size: $size-20;
+        font-weight: bold;
+    }
+
+    &__monthly-condo-fee {
+        font-size: $size-13;
+    }
+
+    // TO DO - criar componente
+    &__detail {
+        font-size: $size-11;
+        line-height: 14px;
+        color: $green-dark;
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+
+        img {
+            margin-right: 4px;
+        }
+    }
+
+    &__business-type {
+        font-size: $size-11;
+        color: $gray;
+        position: absolute;
+        top: $space;
+        right: $space;
+    }
 }

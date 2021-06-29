@@ -1,8 +1,8 @@
-<header class="header" [ngClass]="{'header__vivareal': !isZapImoveis}">
+<header class="header" [ngClass]="{'header--vivareal': !isZapImoveis}">
     <ng-container *ngIf="isZapImoveis; else isVivareal">
-        <img src="assets/img/zap-logo.svg" alt="Zap imóveis" class="logo-zap" />
+        <img src="assets/img/zap-logo.svg" alt="Zap imóveis" class="header__logo-zap" />
     </ng-container>
     <ng-template #isVivareal>
-        <img src="assets/img/vivareal-logo.svg" alt="Viva real imóveis" class="logo-vivareal" />
+        <img src="assets/img/vivareal-logo.svg" alt="Viva real imóveis" class="header__logo-vivareal" />
     </ng-template>
 </header>

@@ -1,9 +1,8 @@
 <app-header *ngIf="companySelected" [isZapImoveis]="companySelected === 'zap-imoveis' "></app-header>
 
 <section class="page">
-    <ul>
-        <li *ngFor="let property of properties | paginate: { itemsPerPage: 20, currentPage: currentPage }" [attr.id]="property.id">
-
+    <ul class="container">
+        <li *ngFor="let property of properties | paginate: { itemsPerPage: 20, currentPage: currentPage }" [attr.id]="property.id" class="container__row">
             <a [routerLink]="['/empresa/', companySelected, property.id]" [queryParams]="{page: currentPage}">
                 <app-property-info-card
                     [images]="property.images"
@@ -14,10 +13,14 @@
                     [usableAreas]="property.usableAreas">
                 </app-property-info-card>
             </a>
-
         </li>
     </ul>
 
-    <pagination-controls maxSize="7" previousLabel="" nextLabel="" autoHide="true" (pageChange)="setPageSelect($event)">
+    <pagination-controls
+        maxSize="7"
+        previousLabel=""
+        nextLabel=""
+        autoHide="true"
+        (pageChange)="setPageSelect($event)">
     </pagination-controls>
 </section>

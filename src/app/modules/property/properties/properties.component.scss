@@ -4,16 +4,13 @@
     background-color: $white-smoke;
 }
 
-ul {
+.container {
     margin: auto;
     padding: $space;
 
-    li {
-        background-color: $white;
+    &__row {
         margin: $space 0;
-        border-radius: 4px;
         list-style: none;
-        overflow: hidden;
     }
 }
 

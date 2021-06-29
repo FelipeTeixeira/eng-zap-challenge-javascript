@@ -2,7 +2,7 @@
 
 .header {
     background-color: $white;
-    box-shadow: 0 2px 8px 0 $shadow;
+    box-shadow: $shadow;
     height: 56px;
     position: relative;
     padding: 0 16px;
@@ -10,15 +10,16 @@
     align-items: center;
     justify-content: center;
 
-    &__vivareal {
+    &--vivareal {
         background-color: $blue-vivareal;
+    }
+
+    &__logo-zap {
+        height: 32px;
+    }
+
+    &__logo-vivareal {
+        height: 24px;
     }
 }
 
-.logo-zap {
-    height: 32px;
-}
-
-.logo-vivareal {
-    height: 24px;
-}

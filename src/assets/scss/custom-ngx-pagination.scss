@@ -1,0 +1,77 @@
+@import "~src/assets/scss/variables";
+
+$button-size: 34px;
+
+ul.ngx-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding-bottom: 16px;
+
+    li {
+        &.pagination-next,
+        &.pagination-previous {
+            border: 1px solid $green-dark;
+            border-radius: 4px;
+            display: inline-flex;
+
+            &.disabled {
+                opacity: 0;
+            }
+
+            > a,
+            > span {
+                background: url("../img/icon-arrow-left.svg") no-repeat center;
+                background-size: 20px;
+                width: $button-size;
+                height: $button-size;
+                display: inline-block;
+            }
+        }
+
+        &.pagination-next {
+            > a,
+            > span {
+                transform: rotate(180deg);
+            }
+        }
+
+        // Reset arrow
+        &.pagination-previous a,
+        &.pagination-next a,
+        &.pagination-next,
+        &.pagination-previous {
+            &::after,
+            &::before,
+            &.disabled {
+                content: none !important;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+
+    li {
+        a,
+        button,
+        .show-for-sr + span {
+            width: $button-size;
+            height: $button-size;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &.current {
+            padding: 0;
+            background: none;
+
+            .show-for-sr + span {
+                background-color: $green-dark;
+                border-radius: 50%;
+            }
+        }
+    }
+}

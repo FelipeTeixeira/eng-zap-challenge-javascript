@@ -1,0 +1,32 @@
+.owl-theme {
+    .owl-item {
+        position: relative;
+    }
+
+    .owl-nav.disabled {
+        + .owl-dots {
+            position: absolute;
+            inset: 0;
+            top: auto;
+            display: flex;
+            justify-content: center;
+
+            .owl-dot {
+                padding: 8px 4px;
+
+                span {
+                    background: rgba($white-smoke, 0.4);
+                    transition: background-color 0.2s ease;
+                    width: 8px;
+                    height: 8px;
+                    margin: 0;
+                }
+
+                &.active span,
+                &:hover span {
+                    background: $white;
+                }
+            }
+        }
+    }
+}
