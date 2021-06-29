@@ -6,6 +6,7 @@ import { LOCALE_ID } from '@angular/core';
 
 // MODULES
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 // DIRECTIVES
 import { AppShellNoRenderDirective } from './directives/app-shell-norender.directive';
@@ -18,12 +19,14 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 // PROVIDERS
 import { PropertyService } from './services/property.service';
 import { PropertyResolver } from './services/property.resolver';
+import { PropertyDetailsResolver } from './services/property-details.resolver';
 import { RegrasUtils } from './utils/regras.util';
 
 registerLocaleData(localePt)
 
 const modules = [
     CarouselModule,
+    NgxPaginationModule
 ];
 
 const components = [
@@ -39,6 +42,7 @@ const directives = [
 const providers = [
     PropertyService,
     PropertyResolver,
+    PropertyDetailsResolver,
     RegrasUtils
 ]
 
@@ -52,8 +56,9 @@ const providers = [
         ...directives,
     ],
     exports: [
+        ...modules,
         ...components,
-        ...directives
+        ...directives,
     ],
     providers: [
         ...providers,

@@ -19,7 +19,7 @@ img {
     height: auto;
 }
 
-// CUSTOM OWL
+// CUSTOM COMPONENTS
 .owl-theme {
     .owl-item {
         position: relative;
@@ -48,6 +48,80 @@ img {
                 &:hover span {
                     background: #fff;
                 }
+            }
+        }
+    }
+}
+
+$button-size: 34px;
+
+ul.ngx-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+        &.pagination-next,
+        &.pagination-previous {
+            border: 1px solid #406367;
+            border-radius: 4px;
+            display: inline-flex;
+
+            &.disabled {
+                opacity: 0;
+            }
+
+            > a,
+            > span {
+                background: url("./assets/img/icon-arrow-left.svg") no-repeat center;
+                background-size: 20px;
+                width: $button-size;
+                height: $button-size;
+                display: inline-block;
+            }
+        }
+
+        &.pagination-next {
+            > a,
+            > span {
+                transform: rotate(180deg);
+            }
+        }
+
+        // Reset arrow
+        &.pagination-previous a,
+        &.pagination-next a,
+        &.pagination-next,
+        &.pagination-previous {
+            &::after,
+            &::before,
+            &.disabled {
+                content: none !important;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+
+    li {
+        a,
+        button,
+        .show-for-sr + span {
+            width: $button-size;
+            height: $button-size;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &.current {
+            padding: 0;
+            background: none;
+
+            .show-for-sr + span {
+                background-color: #406367;
+                border-radius: 50%;
             }
         }
     }
