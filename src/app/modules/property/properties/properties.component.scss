@@ -14,44 +14,6 @@ ul {
         border-radius: 4px;
         list-style: none;
         overflow: hidden;
-
-        .body {
-            padding: $space;
-            position: relative;
-            text-decoration: none;
-            color: $black;
-            display: block;
-        }
     }
 }
 
-.price {
-    font-size: $size-20;
-    font-weight: bold;
-}
-
-.condominio {
-    font-size: $size-13;
-}
-
-// TO DO - criar componente
-.usableAreas {
-    font-size: $size-11;
-    line-height: 14px;
-    color: $green-dark;
-    display: flex;
-    align-items: center;
-    margin-top: 8px;
-
-    img {
-        margin-right: 4px;
-    }
-}
-
-.businessType {
-    font-size: $size-11;
-    color: $gray;
-    position: absolute;
-    top: $space;
-    right: $space;
-}

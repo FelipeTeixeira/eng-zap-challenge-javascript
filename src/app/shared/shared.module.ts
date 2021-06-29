@@ -21,6 +21,7 @@ import { PropertyService } from './services/property.service';
 import { PropertyResolver } from './services/property.resolver';
 import { PropertyDetailsResolver } from './services/property-details.resolver';
 import { RegrasUtils } from './utils/regras.util';
+import { PropertyInfoCardComponent } from './components/property-info-card/property-info-card.component';
 
 registerLocaleData(localePt)
 
@@ -32,6 +33,7 @@ const modules = [
 const components = [
     HeaderComponent,
     GalleryComponent,
+    PropertyInfoCardComponent
 ];
 
 const directives = [

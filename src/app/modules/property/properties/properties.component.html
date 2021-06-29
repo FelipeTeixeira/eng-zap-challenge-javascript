@@ -3,36 +3,18 @@
 <section class="page">
     <ul>
         <li *ngFor="let property of properties | paginate: { itemsPerPage: 20, currentPage: currentPage }" [attr.id]="property.id">
-            <app-gallery [routerLink]="['/empresa/', companySelected, property.id]" [queryParams]="{page: currentPage}" [photos]="property.images"></app-gallery>
 
-            <a class="body" [routerLink]="['/empresa/', companySelected, property.id]" [queryParams]="{page: currentPage}">
-
-                <strong class="price">
-                    {{property.pricingInfos.price | currency}}
-                </strong>
-
-                <p class="condominio" *ngIf="+property.pricingInfos.monthlyCondoFee">
-                    Condominio:
-                    <strong>
-                        {{property.pricingInfos.monthlyCondoFee | currency}}
-                    </strong>
-                </p>
-
-                <span class="businessType">
-                    {{property.pricingInfos.businessType === 'SALE' ? 'Venda' : 'Aluguel'}}
-                </span>
-
-                <p *ngIf="property.address.city" class="usableAreas">
-                    <img src="assets/img/icon-map.svg" alt="Ícone de localização" width="16" height="16">
-                    {{property.address.city}}, {{property.address.neighborhood}}
-                </p>
-
-                <p *ngIf="property.usableAreas" class="usableAreas">
-                    <!-- TO DO - alterar essa imagem -->
-                    <img src="assets/img/icon-area.svg" alt="Ícone de metragem do imóvel" width="16" height="16">
-                    {{property.usableAreas}} m²
-                </p>
+            <a [routerLink]="['/empresa/', companySelected, property.id]" [queryParams]="{page: currentPage}">
+                <app-property-info-card
+                    [images]="property.images"
+                    [price]="+property.pricingInfos.price"
+                    [monthlyCondoFee]="+property.pricingInfos.monthlyCondoFee"
+                    [businessType]="+property.pricingInfos.businessType"
+                    [address]="property.address"
+                    [usableAreas]="property.usableAreas">
+                </app-property-info-card>
             </a>
+
         </li>
     </ul>
 

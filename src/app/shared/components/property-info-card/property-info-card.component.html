@@ -1,0 +1,30 @@
+<app-gallery
+    [photos]="images">
+</app-gallery>
+
+<div class="body">
+    <strong class="price">
+        {{price | currency}}
+    </strong>
+
+    <p class="condominio" *ngIf="+monthlyCondoFee">
+        Condominio:
+        <strong>
+            {{monthlyCondoFee | currency}}
+        </strong>
+    </p>
+
+    <span class="businessType">
+        {{businessType === 'SALE' ? 'Venda' : 'Aluguel'}}
+    </span>
+
+    <p *ngIf="address.city" class="usableAreas">
+        <img src="assets/img/icon-map.svg" alt="Ícone de localização" width="16" height="16">
+        {{address.city}}, {{address.neighborhood}}
+    </p>
+
+    <p *ngIf="usableAreas" class="usableAreas">
+        <img src="assets/img/icon-area.svg" alt="Ícone de metragem do imóvel" width="16" height="16">
+        {{usableAreas}} m²
+    </p>
+</div>
