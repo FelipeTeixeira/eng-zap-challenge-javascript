@@ -10,9 +10,9 @@ import { Property } from '../../../shared/model/property';
     styleUrls: ['./properties.component.scss']
 })
 export class PropertiesComponent implements OnInit, AfterViewInit {
-    page: number = 1;
+    currentPage: number = 1;
     properties: Property[] = [];
-    companySelected: string;
+    companySelected: 'vival-real' | 'zap-imoveis';
 
     constructor(
         private activatedRoute: ActivatedRoute,
@@ -25,7 +25,7 @@ export class PropertiesComponent implements OnInit, AfterViewInit {
         this.companySelected = this.activatedRoute.snapshot.params['company'];
 
         if (this.activatedRoute.snapshot.queryParams.page) {
-            this.setPageSelect(this.activatedRoute.snapshot.queryParams.page);
+            this.currentPage = this.activatedRoute.snapshot.queryParams.page;
         }
     }
 
@@ -36,12 +36,12 @@ export class PropertiesComponent implements OnInit, AfterViewInit {
     }
 
     setPageSelect(page: number) {
-        this.page = page;
+        this.currentPage = page;
 
         this.router.navigate([],
             {
                 queryParams: {
-                    page: this.page
+                    page: this.currentPage
                 },
             }
         );

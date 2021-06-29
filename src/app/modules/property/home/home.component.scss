@@ -1,0 +1,36 @@
+.home {
+    background-color: #4fbfa5;
+    min-height: 100vh;
+
+    &__logo {
+        padding: 44px 16px 0;
+        margin: auto;
+        text-align: center;
+        display: block;
+    }
+
+    &__title {
+        font-size: 26px;
+        text-align: center;
+        font-weight: normal;
+        margin: 48px auto 52px;
+        color: #fff;
+    }
+
+    &__button {
+        background: #fff;
+        margin: auto;
+        max-width: 190px;
+        text-align: center;
+        border-radius: 8px;
+        padding: 10px;
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__imgLogo {
+            height: 30px;
+        }
+    }
+}

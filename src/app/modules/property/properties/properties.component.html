@@ -1,17 +1,17 @@
-<app-header *ngIf="companySelected" [isZapImoveis]="true"></app-header>
+<app-header *ngIf="companySelected" [isZapImoveis]="companySelected === 'zap-imoveis' "></app-header>
 
 <section class="page">
     <ul>
-        <li *ngFor="let property of properties | paginate: { itemsPerPage: 20, currentPage: page }" [attr.id]="property.id">
-            <app-gallery [routerLink]="['/empresa/', companySelected, property.id]" [photos]="property.images"></app-gallery>
+        <li *ngFor="let property of properties | paginate: { itemsPerPage: 20, currentPage: currentPage }" [attr.id]="property.id">
+            <app-gallery [routerLink]="['/empresa/', companySelected, property.id]" [queryParams]="{page: currentPage}" [photos]="property.images"></app-gallery>
 
-            <a class="body" [routerLink]="['/empresa/', companySelected, property.id]">
+            <a class="body" [routerLink]="['/empresa/', companySelected, property.id]" [queryParams]="{page: currentPage}">
 
                 <strong class="price">
                     {{property.pricingInfos.price | currency}}
                 </strong>
 
-                <p class="condominio">
+                <p class="condominio" *ngIf="+property.pricingInfos.monthlyCondoFee">
                     Condominio:
                     <strong>
                         {{property.pricingInfos.monthlyCondoFee | currency}}

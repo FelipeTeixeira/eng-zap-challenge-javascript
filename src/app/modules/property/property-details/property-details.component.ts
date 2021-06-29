@@ -10,6 +10,7 @@ import { Property } from 'src/app/shared/model/property';
 export class PropertyDetailsComponent implements OnInit {
     property: Property;
     companySelected: string;
+    pagePagination: number;
 
     constructor(
         private activatedRoute: ActivatedRoute
@@ -18,5 +19,9 @@ export class PropertyDetailsComponent implements OnInit {
     ngOnInit(): void {
         this.property = this.activatedRoute.snapshot.data['property'];
         this.companySelected = this.activatedRoute.snapshot.params['company'];
+
+        if (this.activatedRoute.snapshot.queryParams.page) {
+            this.pagePagination = this.activatedRoute.snapshot.queryParams.page;
+        }
     }
 }

@@ -59,6 +59,8 @@ ul.ngx-pagination {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    padding-bottom: 16px;
 
     li {
         &.pagination-next,

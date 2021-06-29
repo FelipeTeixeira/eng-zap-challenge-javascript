@@ -1,12 +1,6 @@
 <ng-container *ngIf="property">
     <header>
-
-
-
-        <!-- [routerLink]="['/empresa/', companySelected, property.id]" -->
-
-        <a [routerLink]="['/empresa/', companySelected]" [fragment]="property.id">
-        <!-- <a [routerLink]="['/empresa/', companySelected]"> -->
+        <a [routerLink]="['/empresa/', companySelected]" [queryParams]="{page: pagePagination}"  [fragment]="property.id">
             <img src="assets/img/icon-arrow-left.svg" alt="Ícone botão voltar" width="24">
         </a>
     </header>
