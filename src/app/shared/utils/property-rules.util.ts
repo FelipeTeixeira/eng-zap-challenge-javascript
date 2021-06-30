@@ -38,3 +38,8 @@ export function isMaximumSaleValue(property: Property): boolean {
 export function isMaximumCondoFeeValue(property: Property): boolean {
     return Number(property.pricingInfos.monthlyCondoFee) / Number(property.pricingInfos.price) * 100 < 30;
 }
+
+export function isBoundingBox(property: Property): boolean {
+    const { lon, lat } = property.address.geoLocation.location;
+    return (lat <= -23.546686 && lat >= -23.568704) && (lon >= -46.693419 && lon <= -46.641146);
+}

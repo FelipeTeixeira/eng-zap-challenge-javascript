@@ -15,7 +15,8 @@ import {
     isMaximumRentalValue,
     isMaximumSaleValue,
     isMaximumCondoFeeValue,
- } from '../utils/property-rules.util';
+    isBoundingBox
+} from '../utils/property-rules.util';
 
 @Injectable()
 export class PropertyResolver implements Resolve<Property[]> {
@@ -30,6 +31,10 @@ export class PropertyResolver implements Resolve<Property[]> {
                 && isMinimumSaleValue(item)
                 && isMinimumAreaValue(item);
 
+            if (isAvailableForSale && isBoundingBox(item)) {
+                item.pricingInfos.price = Math.abs((10 / 100 - 1) * Number(item.pricingInfos.price));
+            }
+
             return isAvailableForRental || isAvailableForSale;
         },
         'viva-real': (item: Property) => {
@@ -41,6 +46,10 @@ export class PropertyResolver implements Resolve<Property[]> {
             const isAvailableForSale = hasLatLon(item)
                 && isSale(item)
                 && isMaximumSaleValue(item);
+
+            if (isAvailableForRental && isBoundingBox(item)) {
+                item.pricingInfos.price = ((30 / 100) + 1) * Number(item.pricingInfos.price);
+            }
 
             return isAvailableForRental || isAvailableForSale;
         }

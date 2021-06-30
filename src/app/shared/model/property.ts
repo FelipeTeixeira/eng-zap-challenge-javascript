@@ -15,7 +15,8 @@ export interface Address {
 }
 
 export interface PricingInfos {
-    price: string;
+    // ver isso, de converter todos pra numero
+    price: string | number;
     businessType: string;
     monthlyCondoFee?: string;
     yearlyIptu?: string;
