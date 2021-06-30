@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Property } from '../model/property';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class PropertyService {
-    constructor(private http: HttpClient) { }
+    constructor(
+        private http: HttpClient
+    ) { }
 
     findAll(): Observable<Property[]> {
-        return this.http.get<Property[]>(`/source-1.json`);
+        return this.http.get<Property[]>(`${environment.baseUrl}/source-1.json`);
     }
 }
