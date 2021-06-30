@@ -8,6 +8,7 @@ import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
 import * as cors from 'cors';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -24,8 +25,11 @@ export function app(): express.Express {
     server.set('view engine', 'html');
     server.set('views', distFolder);
 
-    // Example Express Rest API endpoints
-    // server.get('/api/**', (req, res) => { });
+    server.use('/source-1.json', createProxyMiddleware({
+        target: 'http://grupozap-code-challenge.s3-website-us-east-1.amazonaws.com/sources',
+        changeOrigin: true,
+    }));
+
     // Serve static files from /browser
     server.get('*.*', express.static(distFolder, {
         maxAge: '1y'
