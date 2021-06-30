@@ -14,7 +14,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 export function app(): express.Express {
     const server = express();
     server.use(cors());
-    const distFolder = join(process.cwd(), 'dist/olx-br/browser');
+    const distFolder = join(process.cwd(), 'dist/grupo-zap/browser');
     const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
 
     // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)

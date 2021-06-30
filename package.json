@@ -1,5 +1,5 @@
 {
-    "name": "olx-br",
+    "name": "grupo-zap",
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
@@ -8,11 +8,11 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "serve:prerender": "http-server -c-1 dist/olx-br/browser",
-        "dev:ssr": "ng run olx-br:serve-ssr",
-        "serve:ssr": "node dist/olx-br/server/main.js",
-        "build:ssr": "ng build --prod && ng run olx-br:server:production",
-        "prerender": "ng run olx-br:prerender"
+        "serve:prerender": "http-server -c-1 dist/grupo-zap/browser",
+        "dev:ssr": "ng run grupo-zap:serve-ssr",
+        "serve:ssr": "node dist/grupo-zap/server/main.js",
+        "build:ssr": "ng build --prod && ng run grupo-zap:server:production",
+        "prerender": "ng run grupo-zap:prerender"
     },
     "private": true,
     "dependencies": {

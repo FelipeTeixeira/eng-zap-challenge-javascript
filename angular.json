@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "olx-br": {
+        "grupo-zap": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/olx-br/browser",
+                        "outputPath": "dist/grupo-zap/browser",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -75,18 +75,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "olx-br:build"
+                        "browserTarget": "grupo-zap:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "olx-br:build:production"
+                            "browserTarget": "grupo-zap:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "olx-br:build"
+                        "browserTarget": "grupo-zap:build"
                     }
                 },
                 "test": {
@@ -129,18 +129,18 @@
                     "builder": "@angular-devkit/build-angular:protractor",
                     "options": {
                         "protractorConfig": "e2e/protractor.conf.js",
-                        "devServerTarget": "olx-br:serve"
+                        "devServerTarget": "grupo-zap:serve"
                     },
                     "configurations": {
                         "production": {
-                            "devServerTarget": "olx-br:serve:production"
+                            "devServerTarget": "grupo-zap:serve:production"
                         }
                     }
                 },
                 "server": {
                     "builder": "@angular-devkit/build-angular:server",
                     "options": {
-                        "outputPath": "dist/olx-br/server",
+                        "outputPath": "dist/grupo-zap/server",
                         "main": "server.ts",
                         "tsConfig": "tsconfig.server.json",
                         "sourceMap": true,
@@ -163,21 +163,21 @@
                 "serve-ssr": {
                     "builder": "@nguniversal/builders:ssr-dev-server",
                     "options": {
-                        "browserTarget": "olx-br:build",
-                        "serverTarget": "olx-br:server"
+                        "browserTarget": "grupo-zap:build",
+                        "serverTarget": "grupo-zap:server"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "olx-br:build:production",
-                            "serverTarget": "olx-br:server:production"
+                            "browserTarget": "grupo-zap:build:production",
+                            "serverTarget": "grupo-zap:server:production"
                         }
                     }
                 },
                 "prerender": {
                     "builder": "@nguniversal/builders:prerender",
                     "options": {
-                        "browserTarget": "olx-br:build:production",
-                        "serverTarget": "olx-br:server:production",
+                        "browserTarget": "grupo-zap:build:production",
+                        "serverTarget": "grupo-zap:server:production",
                         "routes": [
                             "/"
                         ]
@@ -189,5 +189,5 @@
             }
         }
     },
-    "defaultProject": "olx-br"
+    "defaultProject": "grupo-zap"
 }
