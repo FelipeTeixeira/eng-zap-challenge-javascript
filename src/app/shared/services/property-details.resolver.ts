@@ -15,8 +15,9 @@ export class PropertyDetailsResolver implements Resolve<Property> {
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
     ): Observable<Property> {
+        const company = route.params['company'];
+        const PROPERTY_KEY = makeStateKey<Property[]>(`propertyKey-${company}`);
         const propertyId = route.params['propertyId'];
-        const PROPERTY_KEY = makeStateKey<Property[]>('propertyKey-olx-br');
 
         if (this.transferState.hasKey(PROPERTY_KEY)) {
             const properties = this.transferState.get(PROPERTY_KEY, null);

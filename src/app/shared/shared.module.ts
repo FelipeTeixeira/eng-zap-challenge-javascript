@@ -20,7 +20,6 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { PropertyService } from './services/property.service';
 import { PropertyResolver } from './services/property.resolver';
 import { PropertyDetailsResolver } from './services/property-details.resolver';
-import { RegrasUtils } from './utils/regras.util';
 import { PropertyInfoCardComponent } from './components/property-info-card/property-info-card.component';
 import { CanonicalService } from './services/canonical.service';
 import { MetaTagSeoService } from './services/meta-tag-seo.service';
@@ -47,7 +46,6 @@ const providers = [
     PropertyService,
     PropertyResolver,
     PropertyDetailsResolver,
-    RegrasUtils,
     CanonicalService,
     MetaTagSeoService,
     CurrencyPipe,
