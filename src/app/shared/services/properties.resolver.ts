@@ -19,7 +19,7 @@ import {
 } from '../utils/property-rules.util';
 
 @Injectable()
-export class PropertyResolver implements Resolve<Property[]> {
+export class PropertiesResolver implements Resolve<Property[]> {
     private predicates = {
         'zap-imoveis': (item: Property) => {
             const isAvailableForRental = hasLatLon(item)
@@ -77,7 +77,7 @@ export class PropertyResolver implements Resolve<Property[]> {
                     first(),
                     map(properties => {
                         const propertiesFiltered = properties.filter(this.predicates[company]);
-                        this.transferState.set(PROPERTY_KEY, propertiesFiltered);
+                        this.transferState.set(PROPERTY_KEY, properties);
                         return propertiesFiltered;
                     })
                 );
