@@ -25,9 +25,12 @@ export function app(): express.Express {
     server.set('view engine', 'html');
     server.set('views', distFolder);
 
-    server.use('/source-1.json', createProxyMiddleware({
+    server.use('/api/properties', createProxyMiddleware({
         target: 'http://grupozap-code-challenge.s3-website-us-east-1.amazonaws.com/sources',
         changeOrigin: true,
+        pathRewrite() {
+            return 'source-1.json';
+        }
     }));
 
     // Serve static files from /browser

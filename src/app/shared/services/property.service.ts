@@ -11,6 +11,6 @@ export class PropertyService {
     ) { }
 
     findAll(): Observable<Property[]> {
-        return this.http.get<Property[]>(`${environment.baseUrl}/source-1.json`);
+        return this.http.get<Property[]>(`${environment.baseUrl}/api/properties`);
     }
 }
