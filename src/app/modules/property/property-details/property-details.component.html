@@ -11,10 +11,10 @@
 
     <div class="page-property__col">
         <section class="section property">
-            <app-business-type [name]="property.pricingInfos.businessType"></app-business-type>
+            <app-business-type [name]="property?.pricingInfos.businessType"></app-business-type>
 
             <h1 class="property__price">
-                {{property.pricingInfos.price | currency}}
+                {{property?.pricingInfos.price | currency}}
             </h1>
 
             <small class="property__published">
@@ -27,9 +27,9 @@
             </p>
         </section>
 
-        <section class="pricingInfos section" *ngIf="property.pricingInfos as pricingInfos">
+        <section class="pricingInfos section" *ngIf="property?.pricingInfos as pricingInfos">
             <ul class="pricingInfo">
-                <li *ngIf="+property.pricingInfos.monthlyCondoFee" class="pricingInfo__item">
+                <li *ngIf="+property?.pricingInfos.monthlyCondoFee" class="pricingInfo__item">
                     Condominio:
                     <strong>
                         {{pricingInfos.monthlyCondoFee | currency}}
@@ -93,9 +93,9 @@
             <a [routerLink]="['/empresa/', companySelected, property.id]" [queryParams]="{page: currentPage}">
                 <app-property-info-card
                     [images]="property.images"
-                    [price]="+property.pricingInfos.price"
-                    [monthlyCondoFee]="+property.pricingInfos.monthlyCondoFee"
-                    [businessType]="property.pricingInfos.businessType"
+                    [price]="+property?.pricingInfos.price"
+                    [monthlyCondoFee]="+property?.pricingInfos.monthlyCondoFee"
+                    [businessType]="property?.pricingInfos.businessType"
                     [address]="property.address"
                     [usableAreas]="property.usableAreas">
                 </app-property-info-card>

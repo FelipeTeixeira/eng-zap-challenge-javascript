@@ -23,7 +23,7 @@ export class PropertiesComponent implements OnInit, AfterViewInit {
     ) { }
 
     ngOnInit(): void {
-        this.properties = this.activatedRoute.snapshot.data['properties'];
+        this.properties = this.activatedRoute.snapshot.data['resolvedProperties'];
         this.companySelected = this.activatedRoute.snapshot.params['company'];
 
         if (this.activatedRoute.snapshot.queryParams.page) {

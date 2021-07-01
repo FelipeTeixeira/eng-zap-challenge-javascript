@@ -1,6 +1,6 @@
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Property } from 'src/app/shared/model/property';
 import { MetaTagSeoService } from 'src/app/shared/services/meta-tag-seo.service';
 
@@ -19,20 +19,22 @@ export class PropertyDetailsComponent implements OnInit {
         private activatedRoute: ActivatedRoute,
         private metaTagSeoService: MetaTagSeoService,
         private currencyPipe: CurrencyPipe,
-        private datePipe: DatePipe
+        private datePipe: DatePipe,
+        private router: Router
     ) { }
 
     ngOnInit(): void {
         this.property = this.activatedRoute.snapshot.data['property'];
-        this.propertiesSimilar = this.activatedRoute.snapshot.data['propertiesSimilar'];
         this.companySelected = this.activatedRoute.snapshot.params['company'];
+
+        this.activatedRoute.data.subscribe(res => {
+            this.property = res['resolvedProperty'];
+            this.propertiesSimilar = res['resolvedPropertiesSimilar'];
+            this.setTags(this.property);
+        });
 
         if (this.activatedRoute.snapshot.queryParams.page) {
             this.pagePagination = this.activatedRoute.snapshot.queryParams.page;
-        }
-
-        if (this.property) {
-            this.setTags(this.property);
         }
     }
 
@@ -41,5 +43,13 @@ export class PropertyDetailsComponent implements OnInit {
         const description = `Imóvel em ${property.address.city}. Publicado em ${this.datePipe.transform(property.updatedAt, 'dd MMMM HH:mm')}`;
 
         this.metaTagSeoService.setMetaTags(title, description);
+    }
+
+    backProperties() {
+        this.router.navigate(['/empresa/', this.companySelected], {
+            queryParams: {
+                page: this.pagePagination
+            }
+        });
     }
 }

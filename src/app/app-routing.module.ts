@@ -29,7 +29,7 @@ const routes: Routes = [
                 path: 'empresa/:company',
                 component: PropertiesComponent,
                 resolve: {
-                    properties: PropertiesResolver
+                    resolvedProperties: PropertiesResolver
                 }
             },
             {
@@ -37,8 +37,8 @@ const routes: Routes = [
                 component: PropertyDetailsComponent,
                 resolve: {
                     PropertiesResolver,
-                    property: PropertyDetailsResolver,
-                    propertiesSimilar: PropertiesSimilarResolver,
+                    resolvedProperty: PropertyDetailsResolver,
+                    resolvedPropertiesSimilar: PropertiesSimilarResolver,
                 }
             }
         ],

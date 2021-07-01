@@ -77,7 +77,7 @@ export class PropertiesResolver implements Resolve<Property[]> {
                     first(),
                     map(properties => {
                         const propertiesFiltered = properties.filter(this.predicates[company]);
-                        this.transferState.set(PROPERTY_KEY, properties);
+                        this.transferState.set(PROPERTY_KEY, propertiesFiltered);
                         return propertiesFiltered;
                     })
                 );
