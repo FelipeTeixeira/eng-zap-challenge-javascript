@@ -24,6 +24,7 @@ import { PropertyInfoCardComponent } from './components/property-info-card/prope
 import { CanonicalService } from './services/canonical.service';
 import { MetaTagSeoService } from './services/meta-tag-seo.service';
 import { ButtonRoundComponent } from './components/button-round/button-round.component';
+import { BusinessTypeComponent } from './components/business-type/business-type.component';
 
 registerLocaleData(localePt)
 
@@ -36,7 +37,8 @@ const components = [
     HeaderComponent,
     GalleryComponent,
     PropertyInfoCardComponent,
-    ButtonRoundComponent
+    ButtonRoundComponent,
+    BusinessTypeComponent,
 ];
 
 const directives = [

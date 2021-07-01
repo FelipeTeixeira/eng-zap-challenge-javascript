@@ -1,0 +1,10 @@
+@import "~src/assets/scss/variables";
+
+.business-type {
+    font-size: $font-11;
+    color: $gray;
+
+    @include mq("tablet-small") {
+        font-size: $font-13;
+    }
+}

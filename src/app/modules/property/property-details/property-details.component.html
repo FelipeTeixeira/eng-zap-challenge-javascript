@@ -5,9 +5,7 @@
 
     <div class="page-property__col">
         <section class="section property">
-            <span class="property__businessType">
-                {{property.pricingInfos.businessType === 'SALE' ? 'Venda' : 'Aluguel'}}
-            </span>
+            <app-business-type [name]="property.pricingInfos.businessType"></app-business-type>
 
             <h1 class="property__price">
                 {{property.pricingInfos.price | currency}}

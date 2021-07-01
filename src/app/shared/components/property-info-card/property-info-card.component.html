@@ -3,9 +3,7 @@
     </app-gallery>
 
     <div class="card-info__body">
-        <span class="card-info__business-type">
-            {{businessType === 'SALE' ? 'Venda' : 'Aluguel'}}
-        </span>
+        <app-business-type [name]="businessType"></app-business-type>
 
         <h2 class="card-info__price">
             {{price | currency}}
