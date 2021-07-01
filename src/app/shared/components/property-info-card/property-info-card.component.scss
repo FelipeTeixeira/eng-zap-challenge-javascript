@@ -6,40 +6,76 @@
     list-style: none;
     overflow: hidden;
 
+    app-gallery {
+        @include mq("tablet-small") {
+            width: 50%;
+            display: inline-block;
+        }
+    }
+
+    @include mq("tablet-small") {
+        display: flex;
+    }
+
     &__body {
         color: $black;
-        padding: $space;
+        padding: $space-2;
         position: relative;
+
+        @include mq("tablet-small") {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     &__price {
         font-size: $size-20;
         font-weight: bold;
+
+        @include mq("tablet-small") {
+            font-size: $size-24;
+        }
     }
 
     &__monthly-condo-fee {
         font-size: $size-13;
+
+        @include mq("tablet-small") {
+            font-size: $size-14;
+            margin: 4px 0 auto;
+        }
     }
 
-    // TO DO - criar componente
     &__detail {
-        font-size: $size-11;
-        line-height: 14px;
-        color: $green-dark;
-        display: flex;
-        align-items: center;
-        margin-top: 8px;
+        @include mq("tablet-small") {
+            margin-top: auto;
+        }
 
-        img {
-            margin-right: 4px;
+        &__item {
+            font-size: $size-11;
+            line-height: 14px;
+            color: $green-dark;
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+
+            @include mq("tablet-small") {
+                font-size: $size-13;
+            }
+
+            img {
+                margin-right: 4px;
+            }
         }
     }
 
     &__business-type {
         font-size: $size-11;
         color: $gray;
-        position: absolute;
-        top: $space;
-        right: $space;
+
+        @include mq("tablet-small") {
+            font-size: $size-13;
+        }
     }
 }

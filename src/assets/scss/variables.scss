@@ -1,5 +1,10 @@
+// GENERAL
 $font: "Nunito Sans", sans-serif;
-$space: 16px;
+$space-1: 8px;
+$space-2: 16px;
+$space-3: 24px;
+$space-4: 32px;
+$space-5: 40px;
 $shadow: 0 2px 8px 0 rgb(0 0 0 / 24%);
 
 // COLORS
@@ -18,4 +23,33 @@ $size-13: 0.8125rem;
 $size-14: 0.875rem;
 $size-16: 1rem;
 $size-20: 1.25rem;
+$size-24: 1.5rem;
 $size-26: 1.625rem;
+
+
+// Break points
+$breakpointsList: (
+    "phone-small": 360px,
+    "phone": 400px,
+    "phone-wide": 480px,
+    "phablet": 560px,
+    "tablet-small": 600px,
+    "tablet": 768px,
+    "tablet-wide": 1024px,
+    "desktop": 1200px,
+    "desktop-wide": 1440px,
+    "desktop-wide-md": 1600px,
+    "desktop-wide-lg": 1920px,
+);
+
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpointsList, $width) {
+        $width: map_get($breakpointsList, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}

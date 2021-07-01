@@ -1,83 +1,84 @@
-<ng-container *ngIf="property">
-    <header class="header">
-        <a [routerLink]="['/empresa/', companySelected]" [queryParams]="{page: pagePagination}" [fragment]="property.id" class="header__button">
-            <img src="assets/img/icon-arrow-left.svg" alt="Ícone botão voltar" width="24">
-        </a>
-    </header>
+<div *ngIf="property" class="page-property">
+    <a [routerLink]="['/empresa/', companySelected]" [queryParams]="{page: pagePagination}" [fragment]="property.id"
+        class="button-back">
+        <img src="assets/img/icon-arrow-left.svg" alt="Ícone botão voltar" width="24">
+    </a>
 
     <app-gallery *ngIf="property.images.length" [photos]="property.images"></app-gallery>
 
-    <section class="section property">
-        <h1 class="property__price">
-            {{property.pricingInfos.price | currency}}
-        </h1>
+    <div class="page-property__col">
+        <section class="section property">
+            <span class="property__businessType">
+                {{property.pricingInfos.businessType === 'SALE' ? 'Venda' : 'Aluguel'}}
+            </span>
 
-        <small class="property__published">
-            Publicado em {{property.updatedAt | date:'dd MMMM HH:mm'}}
-        </small>
+            <h1 class="property__price">
+                {{property.pricingInfos.price | currency}}
+            </h1>
 
-        <span class="property__businessType">
-            {{property.pricingInfos.businessType === 'SALE' ? 'Venda' : 'Aluguel'}}
-        </span>
+            <small class="property__published">
+                Publicado em {{property.updatedAt | date:'dd MMMM HH:mm'}}
+            </small>
 
-        <p *ngIf="property.address.city" class="property__address">
-            <img src="assets/img/icon-map.svg" alt="Ícone de localização" width="16" height="16">
-            {{property.address.city}}, {{property.address.neighborhood}}
-        </p>
-    </section>
+            <p *ngIf="property.address.city" class="property__address">
+                <img src="assets/img/icon-map.svg" alt="Ícone de localização" width="16" height="16">
+                {{property.address.city}}, {{property.address.neighborhood}}
+            </p>
+        </section>
 
-    <section class="section" *ngIf="property.pricingInfos as pricingInfos">
-        <ul class="pricingInfo">
-            <li *ngIf="+property.pricingInfos.monthlyCondoFee" class="pricingInfo__item">
-                Condominio:
-                <strong>
-                    {{pricingInfos.monthlyCondoFee | currency}}
-                </strong>
-            </li>
-            <li *ngIf="+pricingInfos?.rentalTotalPrice" class="pricingInfo__item">
-                Preço c/ condomínio:
-                <strong>
-                    {{pricingInfos?.rentalTotalPrice | currency}}
-                </strong>
-            </li>
-            <li *ngIf="pricingInfos?.yearlyIptu" class="pricingInfo__item">
-                IPTU:
-                <strong>
-                    {{+pricingInfos.yearlyIptu ? (pricingInfos.yearlyIptu | currency) : 'Não informado'}}
-                </strong>
-            </li>
-        </ul>
-    </section>
+        <section class="pricingInfos section" *ngIf="property.pricingInfos as pricingInfos">
+            <ul class="pricingInfo">
+                <li *ngIf="+property.pricingInfos.monthlyCondoFee" class="pricingInfo__item">
+                    Condominio:
+                    <strong>
+                        {{pricingInfos.monthlyCondoFee | currency}}
+                    </strong>
+                </li>
+                <li *ngIf="+pricingInfos?.rentalTotalPrice" class="pricingInfo__item">
+                    Preço c/ condomínio:
+                    <strong>
+                        {{pricingInfos?.rentalTotalPrice | currency}}
+                    </strong>
+                </li>
+                <li *ngIf="pricingInfos?.yearlyIptu" class="pricingInfo__item">
+                    IPTU:
+                    <strong>
+                        {{+pricingInfos.yearlyIptu ? (pricingInfos.yearlyIptu | currency) : 'Não informado'}}
+                    </strong>
+                </li>
+            </ul>
+        </section>
 
-    <section class="section details">
-        <h2 class="details__title">
-            Detalhes
-        </h2>
-        <ul class="details__list">
-            <li class="details__item">
-                <figure class="details__item__icon">
-                    <img src="assets/img/icon-area.svg" />
-                </figure>
-                {{property.usableAreas}} m²
-            </li>
-            <li class="details__item">
-                <figure class="details__item__icon">
-                    <img src="assets/img/icon-bathroom.svg" />
-                </figure>
-                {{property.bathrooms}} Banheiro
-            </li>
-            <li class="details__item">
-                <figure class="details__item__icon">
-                    <img src="assets/img/icon-bed.svg" />
-                </figure>
-                {{property.bedrooms}} Quartos
-            </li>
-            <li class="details__item">
-                <figure class="details__item__icon">
-                    <img src="assets/img/icon-car.svg" />
-                </figure>
-                {{property.parkingSpaces}} Vagas
-            </li>
-        </ul>
-    </section>
-</ng-container>
+        <section class="section details">
+            <h2 class="details__title">
+                Detalhes
+            </h2>
+            <ul class="details__list">
+                <li class="details__item">
+                    <figure class="details__item__icon">
+                        <img src="assets/img/icon-area.svg" />
+                    </figure>
+                    {{property.usableAreas}} m²
+                </li>
+                <li class="details__item">
+                    <figure class="details__item__icon">
+                        <img src="assets/img/icon-bathroom.svg" />
+                    </figure>
+                    {{property.bathrooms}} Banheiro
+                </li>
+                <li class="details__item">
+                    <figure class="details__item__icon">
+                        <img src="assets/img/icon-bed.svg" />
+                    </figure>
+                    {{property.bedrooms}} Quartos
+                </li>
+                <li class="details__item">
+                    <figure class="details__item__icon">
+                        <img src="assets/img/icon-car.svg" />
+                    </figure>
+                    {{property.parkingSpaces}} Vagas
+                </li>
+            </ul>
+        </section>
+    </div>
+</div>

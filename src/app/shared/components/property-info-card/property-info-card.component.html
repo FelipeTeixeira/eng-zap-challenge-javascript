@@ -1,12 +1,15 @@
 <div class="card-info">
-    <app-gallery
-        [photos]="images">
+    <app-gallery [photos]="images">
     </app-gallery>
 
     <div class="card-info__body">
-        <strong class="card-info__price">
+        <span class="card-info__business-type">
+            {{businessType === 'SALE' ? 'Venda' : 'Aluguel'}}
+        </span>
+
+        <h2 class="card-info__price">
             {{price | currency}}
-        </strong>
+        </h2>
 
         <p class="card-info__monthly-condo-fee" *ngIf="+monthlyCondoFee">
             Condominio:
@@ -15,18 +18,15 @@
             </strong>
         </p>
 
-        <span class="card-info__business-type">
-            {{businessType === 'SALE' ? 'Venda' : 'Aluguel'}}
-        </span>
-
-        <p *ngIf="address.city" class="card-info__detail">
-            <img src="assets/img/icon-map.svg" alt="Ícone de localização" width="16" height="16">
-            {{address.city}}, {{address.neighborhood}}
-        </p>
-
-        <p *ngIf="usableAreas" class="card-info__detail">
-            <img src="assets/img/icon-area.svg" alt="Ícone de metragem do imóvel" width="16" height="16">
-            {{usableAreas}} m²
-        </p>
+        <ul class="card-info__detail">
+            <li *ngIf="address.city" class="card-info__detail__item">
+                <img src="assets/img/icon-map.svg" alt="Ícone de localização" width="16" height="16">
+                {{address.city}}, {{address.neighborhood}}
+            </li>
+            <li *ngIf="usableAreas" class="card-info__detail__item">
+                <img src="assets/img/icon-area.svg" alt="Ícone de metragem do imóvel" width="16" height="16">
+                {{usableAreas}} m²
+            </li>
+        </ul>
     </div>
 </div>

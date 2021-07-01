@@ -1,33 +1,60 @@
 @import "~src/assets/scss/variables";
 
-.header {
-    position: fixed;
-    left: 0;
-    top: 0;
+.button-back {
+    position: absolute;
+    left: $space-2;
+    top: $space-2;
     z-index: 2;
-    width: 100%;
+    border-radius: 50%;
     display: flex;
-    padding: $space;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    width: 34px;
+    background: rgba($white-smoke, 0.8);
 
-    &__button {
-        border-radius: 50%;
+    @include mq("tablet-wide") {
+        left: $space-4;
+        top: $space-4;
+    }
+}
+
+.page-property {
+    position: relative;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    @include mq("tablet-wide") {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 34px;
-        width: 34px;
-        background: rgba($white-smoke, 0.8);
+        padding: $space-2;
+    }
+
+    app-gallery,
+    &__col {
+        @include mq("tablet-wide") {
+            width: 50%;
+            margin: 0;
+        }
+    }
+
+    &__col {
+        padding: 0 $space-2;
+
+        @include mq("tablet-wide") {
+            padding: $space-2;
+        }
     }
 }
 
 .section {
     position: relative;
     border-top: 1px solid $white-smoke;
-    margin: 0 $space;
-    padding: $space 0;
+    padding: $space-2 0;
 }
 
 .property {
+    border-top: none;
+
     &__price {
         font-size: $size-26;
         font-weight: bold;
@@ -36,9 +63,6 @@
     &__businessType {
         font-size: $size-11;
         color: $gray;
-        position: absolute;
-        top: $space;
-        right: $space;
     }
 
     &__monthly-condo-fee {
@@ -73,7 +97,7 @@
     &__list {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        row-gap: $space;
+        row-gap: $space-2;
     }
 
     &__item {
@@ -113,3 +137,11 @@
         }
     }
 }
+
+
+// override component
+:host ::ng-deep  {
+    .page-property .gallery {
+        height: 400px;
+    }
+  }

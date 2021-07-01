@@ -6,10 +6,11 @@
 
 .container {
     margin: auto;
-    padding: $space;
+    padding: $space-2;
+    max-width: 640px;
 
     &__row {
-        margin: $space 0;
+        margin: $space-2 0;
         list-style: none;
     }
 }
