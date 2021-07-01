@@ -26,8 +26,7 @@ $font-20: 1.25rem;
 $font-24: 1.5rem;
 $font-26: 1.625rem;
 
-$container-sm: 640px;
-$container-md: 1024px;
+$container-md: 1000px;
 
 // Break points
 $breakpointsList: (
@@ -37,7 +36,7 @@ $breakpointsList: (
     "phablet": 560px,
     "tablet-small": 600px,
     "tablet": 768px,
-    "tablet-wide": 1024px,
+    "tablet-wide": 1000px,
     "desktop": 1200px,
     "desktop-wide": 1440px,
     "desktop-wide-md": 1600px,

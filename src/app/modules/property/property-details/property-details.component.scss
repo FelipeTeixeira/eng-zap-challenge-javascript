@@ -7,8 +7,7 @@
     z-index: 2;
 
     @include mq("tablet-wide") {
-        left: $space-4;
-        top: $space-4;
+        display: none;
     }
 }
 
@@ -148,5 +147,11 @@
 :host ::ng-deep {
     .page-property .gallery {
         height: 400px;
+    }
+
+    .header {
+        @include mq("tablet-wide", max) {
+            display: none;
+        }
     }
 }

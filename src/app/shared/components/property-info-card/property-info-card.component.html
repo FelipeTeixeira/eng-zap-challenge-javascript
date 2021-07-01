@@ -17,7 +17,7 @@
         </p>
 
         <ul class="card-info__detail">
-            <li *ngIf="address.city" class="card-info__detail__item">
+            <li *ngIf="address?.city" class="card-info__detail__item">
                 <img src="assets/img/icon-map.svg" alt="Ícone de localização" width="16" height="16">
                 {{address.city}}, {{address.neighborhood}}
             </li>

@@ -1,5 +1,11 @@
+<app-header
+    *ngIf="companySelected"
+    [isZapImoveis]="companySelected === 'zap-imoveis'"
+    (clickedButton)="backProperties()">
+</app-header>
+
 <div *ngIf="property" class="page-property">
-    <app-button-round class="button-back" [routerLink]="['/empresa/', companySelected]" [queryParams]="{page: pagePagination}" ></app-button-round>
+    <app-button-round (clicked)="backProperties()" class="button-back"></app-button-round>
 
     <app-gallery *ngIf="property.images.length" [photos]="property.images"></app-gallery>
 
