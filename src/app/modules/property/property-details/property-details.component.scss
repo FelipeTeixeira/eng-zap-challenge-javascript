@@ -1,6 +1,5 @@
 @import "~src/assets/scss/variables";
 
-
 .button-back {
     position: absolute;
     left: $space-2;
@@ -15,7 +14,7 @@
 
 .page-property {
     position: relative;
-    max-width: 1024px;
+    max-width: $container-md;
     margin: 0 auto;
 
     @include mq("tablet-wide") {
@@ -53,7 +52,6 @@
         font-size: $font-26;
         font-weight: bold;
     }
-
 
     &__monthly-condo-fee {
         font-size: $font-13;
@@ -128,10 +126,27 @@
     }
 }
 
+.propertiesSimilar {
+    background-color: $white-smoke;
+    padding: $space-3 0;
+    margin-top: $space-3;
+
+    &__content,
+    &__title {
+        margin: 0 auto $space-1;
+        max-width: $container-md;
+        padding: 0 $space-2;
+    }
+
+    &__row {
+        margin-bottom: $space-3;
+        list-style: none;
+    }
+}
 
 // override component
-:host ::ng-deep  {
+:host ::ng-deep {
     .page-property .gallery {
         height: 400px;
     }
-  }
+}

@@ -1,6 +1,12 @@
+
+@import "~src/assets/scss/variables";
 .gallery {
     height: 190px;
     overflow: hidden;
+
+    @include mq("tablet-wide") {
+        height: 210px;
+    }
 
     &__photo {
         object-fit: cover;

@@ -18,13 +18,14 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 
 // PROVIDERS
 import { PropertyService } from './services/property.service';
-import { PropertyResolver } from './services/property.resolver';
+import { PropertiesResolver } from './services/properties.resolver';
 import { PropertyDetailsResolver } from './services/property-details.resolver';
 import { PropertyInfoCardComponent } from './components/property-info-card/property-info-card.component';
 import { CanonicalService } from './services/canonical.service';
 import { MetaTagSeoService } from './services/meta-tag-seo.service';
 import { ButtonRoundComponent } from './components/button-round/button-round.component';
 import { BusinessTypeComponent } from './components/business-type/business-type.component';
+import { PropertiesSimilarResolver } from './services/properties-similar.resolver';
 
 registerLocaleData(localePt)
 
@@ -48,8 +49,9 @@ const directives = [
 
 const providers = [
     PropertyService,
-    PropertyResolver,
+    PropertiesResolver,
     PropertyDetailsResolver,
+    PropertiesSimilarResolver,
     CanonicalService,
     MetaTagSeoService,
     CurrencyPipe,

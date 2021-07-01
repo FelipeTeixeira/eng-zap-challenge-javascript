@@ -4,8 +4,9 @@ import { HomeComponent } from './modules/property/home/home.component';
 import { PropertiesComponent } from './modules/property/properties/properties.component';
 import { PropertyDetailsComponent } from './modules/property/property-details/property-details.component';
 import { PropertyComponent } from './modules/property/property.component';
-import { PropertyResolver } from './shared/services/property.resolver';
+import { PropertiesResolver } from './shared/services/properties.resolver';
 import { PropertyDetailsResolver } from './shared/services/property-details.resolver';
+import { PropertiesSimilarResolver } from './shared/services/properties-similar.resolver';
 
 const routerOptions: ExtraOptions = {
     initialNavigation: 'enabled',
@@ -28,15 +29,16 @@ const routes: Routes = [
                 path: 'empresa/:company',
                 component: PropertiesComponent,
                 resolve: {
-                    properties: PropertyResolver
+                    properties: PropertiesResolver
                 }
             },
             {
                 path: 'empresa/:company/:propertyId',
                 component: PropertyDetailsComponent,
                 resolve: {
-                    PropertyResolver,
+                    PropertiesResolver,
                     property: PropertyDetailsResolver,
+                    propertiesSimilar: PropertiesSimilarResolver,
                 }
             }
         ],

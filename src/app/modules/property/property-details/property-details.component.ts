@@ -11,6 +11,7 @@ import { MetaTagSeoService } from 'src/app/shared/services/meta-tag-seo.service'
 })
 export class PropertyDetailsComponent implements OnInit {
     property: Property;
+    propertiesSimilar: Property[];
     companySelected: string;
     pagePagination: number;
 
@@ -23,6 +24,7 @@ export class PropertyDetailsComponent implements OnInit {
 
     ngOnInit(): void {
         this.property = this.activatedRoute.snapshot.data['property'];
+        this.propertiesSimilar = this.activatedRoute.snapshot.data['propertiesSimilar'];
         this.companySelected = this.activatedRoute.snapshot.params['company'];
 
         if (this.activatedRoute.snapshot.queryParams.page) {

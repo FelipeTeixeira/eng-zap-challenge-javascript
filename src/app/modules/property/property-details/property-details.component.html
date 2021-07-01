@@ -77,3 +77,23 @@
         </section>
     </div>
 </div>
+
+<section class="propertiesSimilar">
+    <h3 class="propertiesSimilar__title">
+        Imóveis similares
+    </h3>
+    <ul class="propertiesSimilar__content">
+        <li *ngFor="let property of propertiesSimilar" [attr.id]="property.id" class="propertiesSimilar__row">
+            <a [routerLink]="['/empresa/', companySelected, property.id]" [queryParams]="{page: currentPage}">
+                <app-property-info-card
+                    [images]="property.images"
+                    [price]="+property.pricingInfos.price"
+                    [monthlyCondoFee]="+property.pricingInfos.monthlyCondoFee"
+                    [businessType]="property.pricingInfos.businessType"
+                    [address]="property.address"
+                    [usableAreas]="property.usableAreas">
+                </app-property-info-card>
+            </a>
+        </li>
+    </ul>
+</section>
