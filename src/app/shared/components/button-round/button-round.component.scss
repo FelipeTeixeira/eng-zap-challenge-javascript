@@ -1,0 +1,13 @@
+@import "~src/assets/scss/variables";
+
+.button-back {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    width: 34px;
+    background: rgba($white-smoke, 0.8);
+    border: none;
+    cursor: pointer;
+}

@@ -17,15 +17,16 @@ $blue-vivareal: #1190cd;
 $black: #000;
 $black-40: rgb(0 0 0 / 40%);
 
-// SIZES - reference http://www.standardista.com/px-to-rem-conversion-if-root-font-size-is-16px/
-$size-11: 0.6875rem;
-$size-13: 0.8125rem;
-$size-14: 0.875rem;
-$size-16: 1rem;
-$size-20: 1.25rem;
-$size-24: 1.5rem;
-$size-26: 1.625rem;
+// FONTS SIZES - reference http://www.standardista.com/px-to-rem-conversion-if-root-font-size-is-16px/
+$font-11: 0.6875rem;
+$font-13: 0.8125rem;
+$font-14: 0.875rem;
+$font-16: 1rem;
+$font-20: 1.25rem;
+$font-24: 1.5rem;
+$font-26: 1.625rem;
 
+$container-sm: 640px;
 
 // Break points
 $breakpointsList: (

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
     selector: 'app-header',
@@ -6,10 +6,15 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+    @Output() clickedButton: EventEmitter<any> = new EventEmitter();
     @Input() isZapImoveis: boolean;
 
     constructor() { }
 
     ngOnInit(): void {
+    }
+
+    onClickButtonBack() {
+        this.clickedButton.emit();
     }
 }

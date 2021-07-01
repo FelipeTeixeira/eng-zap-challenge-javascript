@@ -1,17 +1,11 @@
 @import "~src/assets/scss/variables";
 
+
 .button-back {
     position: absolute;
     left: $space-2;
     top: $space-2;
     z-index: 2;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 34px;
-    width: 34px;
-    background: rgba($white-smoke, 0.8);
 
     @include mq("tablet-wide") {
         left: $space-4;
@@ -56,23 +50,23 @@
     border-top: none;
 
     &__price {
-        font-size: $size-26;
+        font-size: $font-26;
         font-weight: bold;
     }
 
     &__businessType {
-        font-size: $size-11;
+        font-size: $font-11;
         color: $gray;
     }
 
     &__monthly-condo-fee {
-        font-size: $size-13;
+        font-size: $font-13;
     }
 
     // TO DO - criar componente
     &__address {
-        font-size: $size-11;
-        line-height: $size-14;
+        font-size: $font-11;
+        line-height: $font-14;
         color: $green-dark;
         display: flex;
         align-items: center;
@@ -90,7 +84,7 @@
 
 .details {
     &__title {
-        font-size: $size-16;
+        font-size: $font-16;
         margin-bottom: 12px;
     }
 
@@ -101,7 +95,7 @@
     }
 
     &__item {
-        font-size: $size-14;
+        font-size: $font-14;
         color: $green-dark;
         display: flex;
         align-items: center;
@@ -125,7 +119,7 @@
 
 .pricingInfo {
     &__item {
-        font-size: $size-14;
+        font-size: $font-14;
         list-style: none;
         display: flex;
         align-items: center;

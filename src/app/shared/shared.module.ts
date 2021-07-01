@@ -23,6 +23,7 @@ import { PropertyDetailsResolver } from './services/property-details.resolver';
 import { PropertyInfoCardComponent } from './components/property-info-card/property-info-card.component';
 import { CanonicalService } from './services/canonical.service';
 import { MetaTagSeoService } from './services/meta-tag-seo.service';
+import { ButtonRoundComponent } from './components/button-round/button-round.component';
 
 registerLocaleData(localePt)
 
@@ -34,7 +35,8 @@ const modules = [
 const components = [
     HeaderComponent,
     GalleryComponent,
-    PropertyInfoCardComponent
+    PropertyInfoCardComponent,
+    ButtonRoundComponent
 ];
 
 const directives = [

@@ -7,7 +7,7 @@
 .container {
     margin: auto;
     padding: $space-2;
-    max-width: 640px;
+    max-width: $container-sm;
 
     &__row {
         margin: $space-2 0;

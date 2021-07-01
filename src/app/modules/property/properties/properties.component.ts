@@ -56,4 +56,8 @@ export class PropertiesComponent implements OnInit, AfterViewInit {
 
         this.metaTagSeoService.setMetaTags(title, description);
     }
+
+    backHome() {
+        this.router.navigate(['/']);
+    }
 }

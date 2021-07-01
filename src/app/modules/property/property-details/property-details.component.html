@@ -1,8 +1,5 @@
 <div *ngIf="property" class="page-property">
-    <a [routerLink]="['/empresa/', companySelected]" [queryParams]="{page: pagePagination}" [fragment]="property.id"
-        class="button-back">
-        <img src="assets/img/icon-arrow-left.svg" alt="Ícone botão voltar" width="24">
-    </a>
+    <app-button-round class="button-back" [routerLink]="['/empresa/', companySelected]" [queryParams]="{page: pagePagination}" ></app-button-round>
 
     <app-gallery *ngIf="property.images.length" [photos]="property.images"></app-gallery>
 

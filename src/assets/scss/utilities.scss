@@ -1,0 +1,8 @@
+@import "~src/assets/scss/variables";
+
+.u-container-sm {
+    max-width: $container-sm;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}

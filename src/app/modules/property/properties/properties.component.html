@@ -1,4 +1,8 @@
-<app-header *ngIf="companySelected" [isZapImoveis]="companySelected === 'zap-imoveis' "></app-header>
+<app-header
+    *ngIf="companySelected"
+    [isZapImoveis]="companySelected === 'zap-imoveis'"
+    (clickedButton)="backHome()">
+</app-header>
 
 <section class="page">
     <ul class="container">

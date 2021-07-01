@@ -30,19 +30,19 @@
     }
 
     &__price {
-        font-size: $size-20;
+        font-size: $font-20;
         font-weight: bold;
 
         @include mq("tablet-small") {
-            font-size: $size-24;
+            font-size: $font-24;
         }
     }
 
     &__monthly-condo-fee {
-        font-size: $size-13;
+        font-size: $font-13;
 
         @include mq("tablet-small") {
-            font-size: $size-14;
+            font-size: $font-14;
             margin: 4px 0 auto;
         }
     }
@@ -53,7 +53,7 @@
         }
 
         &__item {
-            font-size: $size-11;
+            font-size: $font-11;
             line-height: 14px;
             color: $green-dark;
             display: flex;
@@ -61,7 +61,7 @@
             margin-top: 8px;
 
             @include mq("tablet-small") {
-                font-size: $size-13;
+                font-size: $font-13;
             }
 
             img {
@@ -71,11 +71,11 @@
     }
 
     &__business-type {
-        font-size: $size-11;
+        font-size: $font-11;
         color: $gray;
 
         @include mq("tablet-small") {
-            font-size: $size-13;
+            font-size: $font-13;
         }
     }
 }
