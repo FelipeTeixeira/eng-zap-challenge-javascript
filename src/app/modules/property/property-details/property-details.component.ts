@@ -39,8 +39,8 @@ export class PropertyDetailsComponent implements OnInit {
     }
 
     setTags(property: Property) {
-        const title = `${this.currencyPipe.transform(property.pricingInfos.price)} - ${property.address.city}, ${property.address.neighborhood}`;
-        const description = `Imóvel em ${property.address.city}. Publicado em ${this.datePipe.transform(property.updatedAt, 'dd MMMM HH:mm')}`;
+        const title = `${this.currencyPipe.transform(property?.pricingInfos.price)} - ${property?.address?.city}, ${property?.address?.neighborhood}`;
+        const description = `Imóvel em ${property?.address?.city}. Publicado em ${this.datePipe.transform(property?.updatedAt, 'dd MMMM HH:mm')}`;
 
         this.metaTagSeoService.setMetaTags(title, description);
     }

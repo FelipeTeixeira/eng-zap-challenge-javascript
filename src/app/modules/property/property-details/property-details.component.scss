@@ -86,27 +86,6 @@
         row-gap: $space-2;
     }
 
-    &__item {
-        font-size: $font-14;
-        color: $green-dark;
-        display: flex;
-        align-items: center;
-
-        &__icon {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            background-color: $white-smoke;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 8px;
-
-            img {
-                width: 22px;
-            }
-        }
-    }
 }
 
 .pricingInfo {

@@ -56,28 +56,31 @@
             </h2>
             <ul class="details__list">
                 <li class="details__item">
-                    <figure class="details__item__icon">
-                        <img src="assets/img/icon-area.svg" />
-                    </figure>
-                    {{property.usableAreas}} m²
+                    <app-details-with-icon
+                        icon="assets/img/icon-area.svg"
+                        [description]="property.usableAreas + 'm²'">
+                    </app-details-with-icon>
                 </li>
                 <li class="details__item">
-                    <figure class="details__item__icon">
-                        <img src="assets/img/icon-bathroom.svg" />
-                    </figure>
-                    {{property.bathrooms}} Banheiro
+                    <app-details-with-icon
+                        icon="assets/img/icon-bathroom.svg"
+                        [description]="property.bathrooms + 'Banheiro'">
+                    </app-details-with-icon>
                 </li>
                 <li class="details__item">
-                    <figure class="details__item__icon">
-                        <img src="assets/img/icon-bed.svg" />
-                    </figure>
-                    {{property.bedrooms}} Quartos
+                    <app-details-with-icon
+                        icon="assets/img/icon-bed.svg"
+                        [description]="property.bedrooms + 'Quartos'">
+                    </app-details-with-icon>
                 </li>
                 <li class="details__item">
-                    <figure class="details__item__icon">
-                        <img src="assets/img/icon-car.svg" />
-                    </figure>
-                    {{property.parkingSpaces}} Vagas
+
+                    <app-details-with-icon
+                        icon="assets/img/icon-car.svg"
+                        [description]="property.parkingSpaces + 'Vagas'">
+                    </app-details-with-icon>
+
+
                 </li>
             </ul>
         </section>
