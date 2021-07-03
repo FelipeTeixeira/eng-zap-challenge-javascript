@@ -5,7 +5,7 @@ import { PropertyService } from '../../../shared/services/property.service';
 import { Property } from '../../../shared/model/property';
 
 @Component({
-    selector: 'home',
+    selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })

@@ -1,0 +1,40 @@
+@import "~src/assets/scss/variables";
+
+$palette: (
+    "primary": $primary,
+    "white": $white,
+    "blue": $blue-vivareal,
+    "green": $green-ligth
+);
+
+.zap {
+    &-button {
+        min-width: 200px;
+        text-align: center;
+        border-radius: 8px;
+        padding: $space-2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s ease;
+        border-width: 2px;
+    }
+
+    @each $name, $color in $palette {
+        &--#{$name} {
+            @if ($color == $white) {
+                color: $primary;
+            } @else {
+                color: $white;
+            }
+
+            border-color: $color;
+            background: $color;
+
+            &:hover {
+                background: rgba($color, 0.7);
+            }
+        }
+    }
+}
+
