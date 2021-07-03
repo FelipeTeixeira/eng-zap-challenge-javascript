@@ -34,18 +34,18 @@
     </div>
 </div>
 
-<section class="propertiesSimilar" *ngIf="(propertiesSimilar$ | async) as propertiesSimilar">
-    <h3 class="propertiesSimilar__title">
+<section class="properties-similar" *ngIf="(propertiesSimilar$ | async) as propertiesSimilar">
+    <h3 class="properties-similar__title">
         Imóveis similares
     </h3>
-    <ul class="propertiesSimilar__content">
-        <li *ngFor="let item of propertiesSimilar" [attr.id]="item.id" class="propertiesSimilar__row">
+    <ul class="properties-similar__content">
+        <li *ngFor="let item of propertiesSimilar" [attr.id]="item.id" class="properties-similar__row">
             <a [routerLink]="['/empresa/', companySelected, item.id]" [queryParams]="{page: currentPage}">
                 <app-property-info-card
                     [images]="item.images"
-                    [price]="+item?.pricingInfos.price"
-                    [monthlyCondoFee]="+item?.pricingInfos.monthlyCondoFee"
-                    [businessType]="item?.pricingInfos.businessType"
+                    [price]="+item.pricingInfos.price"
+                    [monthlyCondoFee]="+item.pricingInfos.monthlyCondoFee"
+                    [businessType]="item.pricingInfos.businessType"
                     [address]="item.address"
                     [usableAreas]="item.usableAreas">
                 </app-property-info-card>
@@ -53,4 +53,3 @@
         </li>
     </ul>
 </section>
-
