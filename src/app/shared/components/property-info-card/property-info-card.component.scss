@@ -51,22 +51,5 @@
         @include mq("tablet-small") {
             margin-top: auto;
         }
-
-        &__item {
-            font-size: $font-11;
-            line-height: 14px;
-            color: $green-dark;
-            display: flex;
-            align-items: center;
-            margin-top: 8px;
-
-            @include mq("tablet-small") {
-                font-size: $font-13;
-            }
-
-            img {
-                margin-right: 4px;
-            }
-        }
     }
 }

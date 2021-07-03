@@ -16,14 +16,21 @@
             </strong>
         </p>
 
-        <ul class="card-info__detail">
-            <li *ngIf="address?.city" class="card-info__detail__item">
-                <img src="assets/img/icon-map.svg" alt="Ícone de localização" width="16" height="16">
-                {{address.city}}, {{address.neighborhood}}
+        <ul class="card-info__detail" *ngIf="address?.city || usableAreas">
+            <li *ngIf="address?.city">
+                <app-info-with-icon
+                    icon="assets/img/icon-map.svg"
+                    alt="Ícone de localização"
+                    [description]="address.city + ', ' + address.neighborhood">
+                </app-info-with-icon>
             </li>
-            <li *ngIf="usableAreas" class="card-info__detail__item">
-                <img src="assets/img/icon-area.svg" alt="Ícone de metragem do imóvel" width="16" height="16">
-                {{usableAreas}} m²
+
+            <li *ngIf="usableAreas">
+                <app-info-with-icon
+                    icon="assets/img/icon-area.svg"
+                    alt="Ícone de metragem do imóvel"
+                    [description]="usableAreas + ' m²'">
+                </app-info-with-icon>
             </li>
         </ul>
     </div>

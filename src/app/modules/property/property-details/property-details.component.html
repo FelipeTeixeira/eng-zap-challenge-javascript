@@ -21,10 +21,13 @@
                 Publicado em {{property.updatedAt | date:'dd MMMM HH:mm'}}
             </small>
 
-            <p *ngIf="property.address.city" class="property__address">
-                <img src="assets/img/icon-map.svg" alt="Ícone de localização" width="16" height="16">
-                {{property.address.city}}, {{property.address.neighborhood}}
-            </p>
+            <app-info-with-icon
+                *ngIf="property.address.city"
+                icon="assets/img/icon-map.svg"
+                alt="Ícone de localização"
+                [description]="property.address.city + ', ' + property.address.neighborhood">
+            </app-info-with-icon>
+
         </section>
 
         <section class="pricingInfos section" *ngIf="property?.pricingInfos as pricingInfos">
@@ -56,31 +59,32 @@
             </h2>
             <ul class="details__list">
                 <li class="details__item">
-                    <app-details-with-icon
+                    <app-info-with-icon
+                        type="round"
                         icon="assets/img/icon-area.svg"
-                        [description]="property.usableAreas + 'm²'">
-                    </app-details-with-icon>
+                        [description]="property.usableAreas + ' m²'">
+                    </app-info-with-icon>
                 </li>
                 <li class="details__item">
-                    <app-details-with-icon
+                    <app-info-with-icon
+                        type="round"
                         icon="assets/img/icon-bathroom.svg"
-                        [description]="property.bathrooms + 'Banheiro'">
-                    </app-details-with-icon>
+                        [description]="property.bathrooms + ' Banheiro'">
+                    </app-info-with-icon>
                 </li>
                 <li class="details__item">
-                    <app-details-with-icon
+                    <app-info-with-icon
+                        type="round"
                         icon="assets/img/icon-bed.svg"
-                        [description]="property.bedrooms + 'Quartos'">
-                    </app-details-with-icon>
+                        [description]="property.bedrooms + ' Quartos'">
+                    </app-info-with-icon>
                 </li>
                 <li class="details__item">
-
-                    <app-details-with-icon
+                    <app-info-with-icon
+                        type="round"
                         icon="assets/img/icon-car.svg"
-                        [description]="property.parkingSpaces + 'Vagas'">
-                    </app-details-with-icon>
-
-
+                        [description]="property.parkingSpaces + ' Vagas'">
+                    </app-info-with-icon>
                 </li>
             </ul>
         </section>

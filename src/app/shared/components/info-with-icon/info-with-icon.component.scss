@@ -1,0 +1,47 @@
+@import "~src/assets/scss/variables";
+
+.detail {
+    $parent: &;
+
+    font-size: $font-11;
+    color: $green-dark;
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+
+    @include mq("tablet-small") {
+        font-size: $font-14;
+    }
+
+    &__icon {
+        display: flex;
+        margin-right: 4px;
+
+        &__img {
+            height: 16px;
+            width: 16px;
+        }
+    }
+
+    &--round {
+        font-size: $font-14;
+    }
+
+    #{$parent}--round & {
+        @at-root &__icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background-color: $white-smoke;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+
+            &__img {
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+}

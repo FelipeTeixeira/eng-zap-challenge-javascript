@@ -1,0 +1,6 @@
+<div class="detail" [ngClass]="{'detail--round': type === 'round'}">
+    <figure class="detail__icon">
+        <img [src]="icon" [alt]="imgAlt ? imgAlt : description" class="detail__icon__img" />
+    </figure>
+    {{description}}
+</div>

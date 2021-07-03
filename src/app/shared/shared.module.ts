@@ -26,7 +26,7 @@ import { MetaTagSeoService } from './services/meta-tag-seo.service';
 import { ButtonRoundComponent } from './components/button-round/button-round.component';
 import { BusinessTypeComponent } from './components/business-type/business-type.component';
 import { PropertiesSimilarResolver } from './services/properties-similar.resolver';
-import { DetailsWithIconComponent } from './components/details-with-icon/details-with-icon.component';
+import { InfoWithIconComponent } from './components/info-with-icon/info-with-icon.component';
 
 registerLocaleData(localePt)
 
@@ -41,7 +41,7 @@ const components = [
     PropertyInfoCardComponent,
     ButtonRoundComponent,
     BusinessTypeComponent,
-    DetailsWithIconComponent,
+    InfoWithIconComponent,
 ];
 
 const directives = [
