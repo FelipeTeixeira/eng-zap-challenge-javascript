@@ -19,13 +19,11 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 // PROVIDERS
 import { PropertyService } from './services/property.service';
 import { PropertiesResolver } from './services/properties.resolver';
-import { PropertyDetailsResolver } from './services/property-details.resolver';
 import { PropertyInfoCardComponent } from './components/property-info-card/property-info-card.component';
 import { CanonicalService } from './services/canonical.service';
 import { MetaTagSeoService } from './services/meta-tag-seo.service';
 import { ButtonRoundComponent } from './components/button-round/button-round.component';
 import { BusinessTypeComponent } from './components/business-type/business-type.component';
-import { PropertiesSimilarResolver } from './services/properties-similar.resolver';
 import { InfoWithIconComponent } from './components/info-with-icon/info-with-icon.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ButtonComponent } from './components/button/button.component';
@@ -56,8 +54,6 @@ const directives = [
 const providers = [
     PropertyService,
     PropertiesResolver,
-    PropertyDetailsResolver,
-    PropertiesSimilarResolver,
     CanonicalService,
     MetaTagSeoService,
     CurrencyPipe,

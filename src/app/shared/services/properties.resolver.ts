@@ -37,6 +37,7 @@ export class PropertiesResolver implements Resolve<Property[]> {
 
             return isAvailableForRental || isAvailableForSale;
         },
+
         'viva-real': (item: Property) => {
             const isAvailableForRental = hasLatLon(item)
                 && isRental(item)
@@ -66,7 +67,7 @@ export class PropertiesResolver implements Resolve<Property[]> {
     ): Observable<Property[]> {
 
         const company = route.params['company'];
-        const PROPERTY_KEY = makeStateKey<Property[]>(`propertyKey-${company}`);
+        const PROPERTY_KEY = this.propertyService.getStateKey(company);
 
         if (this.transferState.hasKey(PROPERTY_KEY)) {
             return of(this.transferState.get(PROPERTY_KEY, null));

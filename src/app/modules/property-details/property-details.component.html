@@ -4,21 +4,21 @@
     (clickedButton)="backProperties()">
 </app-header>
 
-<div class="page-property">
+<div class="page-property" *ngIf="(property$ | async) as property">
     <app-button-round (clicked)="backProperties()" class="button-back"></app-button-round>
 
-    <app-gallery *ngIf="property?.images.length" [photos]="property.images"></app-gallery>
+    <app-gallery *ngIf="property.images.length" [photos]="property.images"></app-gallery>
 
     <div class="page-property__col">
         <section class="section property">
-            <app-business-type [name]="property?.pricingInfos.businessType"></app-business-type>
+            <app-business-type [name]="property.pricingInfos.businessType"></app-business-type>
 
             <h1 class="property__price">
-                {{property?.pricingInfos.price | currency}}
+                {{property.pricingInfos.price | currency}}
             </h1>
 
             <small class="property__published">
-                Publicado em {{property?.updatedAt | date:'dd MMMM HH:mm'}}
+                Publicado em {{property.updatedAt | date:'dd MMMM HH:mm'}}
             </small>
 
             <app-info-with-icon
@@ -29,29 +29,28 @@
             </app-info-with-icon>
 
         </section>
-        <app-pricing-infos class="section" [pricingInfos]="property?.pricingInfos"></app-pricing-infos>
+        <app-pricing-infos class="section" [pricingInfos]="property.pricingInfos"></app-pricing-infos>
         <app-features class="section" [property]="property"></app-features>
     </div>
 </div>
 
-<section class="propertiesSimilar">
+<section class="propertiesSimilar" *ngIf="(propertiesSimilar$ | async) as propertiesSimilar">
     <h3 class="propertiesSimilar__title">
         Imóveis similares
     </h3>
     <ul class="propertiesSimilar__content">
-        <li *ngFor="let property of propertiesSimilar" [attr.id]="property.id" class="propertiesSimilar__row">
-            <a [routerLink]="['/empresa/', companySelected, property.id]" [queryParams]="{page: currentPage}">
+        <li *ngFor="let item of propertiesSimilar" [attr.id]="item.id" class="propertiesSimilar__row">
+            <a [routerLink]="['/empresa/', companySelected, item.id]" [queryParams]="{page: currentPage}">
                 <app-property-info-card
-                    [images]="property.images"
-                    [price]="+property?.pricingInfos.price"
-                    [monthlyCondoFee]="+property?.pricingInfos.monthlyCondoFee"
-                    [businessType]="property?.pricingInfos.businessType"
-                    [address]="property.address"
-                    [usableAreas]="property.usableAreas">
+                    [images]="item.images"
+                    [price]="+item?.pricingInfos.price"
+                    [monthlyCondoFee]="+item?.pricingInfos.monthlyCondoFee"
+                    [businessType]="item?.pricingInfos.businessType"
+                    [address]="item.address"
+                    [usableAreas]="item.usableAreas">
                 </app-property-info-card>
             </a>
         </li>
     </ul>
 </section>
 
-properties-similar

@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { PropertiesResolver } from './shared/services/properties.resolver';
-import { PropertyDetailsResolver } from './shared/services/property-details.resolver';
-import { PropertiesSimilarResolver } from './shared/services/properties-similar.resolver';
 import { HomeComponent } from './modules/home/home.component';
 import { PropertiesListComponent } from './modules/properties-list/properties-list.component';
 import { PropertyDetailsComponent } from './modules/property-details/property-details.component';
@@ -31,9 +29,7 @@ const routes: Routes = [
         path: 'empresa/:company/:propertyId',
         component: PropertyDetailsComponent,
         resolve: {
-            PropertiesResolver,
-            resolvedProperty: PropertyDetailsResolver,
-            resolvedPropertiesSimilar: PropertiesSimilarResolver,
+            resolvedProperties: PropertiesResolver,
         }
     }
 ];
