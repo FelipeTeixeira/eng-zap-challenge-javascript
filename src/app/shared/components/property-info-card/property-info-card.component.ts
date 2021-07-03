@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Address } from '../../model/property';
 
 @Component({
     selector: 'app-property-info-card',
     templateUrl: './property-info-card.component.html',
-    styleUrls: ['./property-info-card.component.scss']
+    styleUrls: ['./property-info-card.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PropertyInfoCardComponent implements OnInit {
     @Input() images: string[];
