@@ -25,9 +25,10 @@ export class PropertyDetailsComponent implements OnInit {
 
     ngOnInit(): void {
         this.companySelected = this.activatedRoute.snapshot.params['company'];
+        this.property = this.activatedRoute.snapshot.data['resolvedProperty'];
+        // this.property = res['resolvedProperty'];
 
         this.activatedRoute.data.subscribe(res => {
-            this.property = res['resolvedProperty'];
             this.propertiesSimilar = res['resolvedPropertiesSimilar'];
             this.setTags(this.property);
         });

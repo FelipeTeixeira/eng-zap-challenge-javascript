@@ -1,0 +1,26 @@
+<section>
+    <ul class="pricing-info">
+
+        <li *ngIf="+pricingInfos.monthlyCondoFee" class="pricing-info__item">
+            Condominio:
+            <strong class="pricing-info__value">
+                {{pricingInfos.monthlyCondoFee | currency}}
+            </strong>
+        </li>
+
+        <li *ngIf="+pricingInfos?.rentalTotalPrice" class="pricing-info__item">
+            Preço c/ condomínio:
+            <strong class="pricing-info__value">
+                {{pricingInfos?.rentalTotalPrice | currency}}
+            </strong>
+        </li>
+
+        <li *ngIf="pricingInfos?.yearlyIptu" class="pricing-info__item">
+            IPTU:
+            <strong class="pricing-info__value">
+                {{+pricingInfos.yearlyIptu ? (pricingInfos.yearlyIptu | currency) : 'Não informado'}}
+            </strong>
+        </li>
+
+    </ul>
+</section>

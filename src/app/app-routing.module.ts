@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
-import { HomeComponent } from './modules/property/home/home.component';
-import { PropertiesComponent } from './modules/property/properties/properties.component';
-import { PropertyDetailsComponent } from './modules/property/property-details/property-details.component';
-import { PropertyComponent } from './modules/property/property.component';
 import { PropertiesResolver } from './shared/services/properties.resolver';
 import { PropertyDetailsResolver } from './shared/services/property-details.resolver';
 import { PropertiesSimilarResolver } from './shared/services/properties-similar.resolver';
+import { HomeComponent } from './modules/home/home.component';
+import { PropertiesListComponent } from './modules/properties-list/properties-list.component';
+import { PropertyDetailsComponent } from './modules/property-details/property-details.component';
 
 const routerOptions: ExtraOptions = {
     initialNavigation: 'enabled',
@@ -14,34 +13,28 @@ const routerOptions: ExtraOptions = {
     scrollPositionRestoration: 'enabled',
     anchorScrolling: 'enabled',
     scrollOffset: [0, 16],
-  };
+};
 
 const routes: Routes = [
     {
         path: '',
-        component: PropertyComponent,
-        children: [
-            {
-                path: '',
-                component: HomeComponent
-            },
-            {
-                path: 'empresa/:company',
-                component: PropertiesComponent,
-                resolve: {
-                    resolvedProperties: PropertiesResolver
-                }
-            },
-            {
-                path: 'empresa/:company/:propertyId',
-                component: PropertyDetailsComponent,
-                resolve: {
-                    PropertiesResolver,
-                    resolvedProperty: PropertyDetailsResolver,
-                    resolvedPropertiesSimilar: PropertiesSimilarResolver,
-                }
-            }
-        ],
+        component: HomeComponent
+    },
+    {
+        path: 'empresa/:company',
+        component: PropertiesListComponent,
+        resolve: {
+            resolvedProperties: PropertiesResolver
+        }
+    },
+    {
+        path: 'empresa/:company/:propertyId',
+        component: PropertyDetailsComponent,
+        resolve: {
+            PropertiesResolver,
+            resolvedProperty: PropertyDetailsResolver,
+            resolvedPropertiesSimilar: PropertiesSimilarResolver,
+        }
     }
 ];
 

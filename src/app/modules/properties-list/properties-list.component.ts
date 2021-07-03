@@ -2,15 +2,15 @@ import { ViewportScroller } from '@angular/common';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
-import { MetaTagSeoService } from 'src/app/shared/services/meta-tag-seo.service';
-import { Property } from '../../../shared/model/property';
+import { MetaTagSeoService } from '../../shared/services/meta-tag-seo.service';
+import { Property } from '../../shared/model/property';
 
 @Component({
     selector: 'app-properties',
-    templateUrl: './properties.component.html',
-    styleUrls: ['./properties.component.scss']
+    templateUrl: './properties-list.component.html',
+    styleUrls: ['./properties-list.component.scss']
 })
-export class PropertiesComponent implements OnInit, AfterViewInit {
+export class PropertiesListComponent implements OnInit, AfterViewInit {
     currentPage: number = 1;
     properties: Property[] = [];
     companySelected: 'vival-real' | 'zap-imoveis';

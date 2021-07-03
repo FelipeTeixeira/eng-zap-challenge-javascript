@@ -4,8 +4,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+
+import { HomeModule } from './modules/home/home.module';
+import { PropertiesListModule } from './modules/properties-list/properties-list.module';
+import { PropertyDetailsModule } from './modules/property-details/property-details.module';
 import { SharedModule } from './shared/shared.module';
-import { PropertyModule } from './modules/property/property.module';
 
 @NgModule({
     declarations: [
@@ -17,8 +20,10 @@ import { PropertyModule } from './modules/property/property.module';
         BrowserAnimationsModule,
         AppRoutingModule,
         HttpClientModule,
+        HomeModule,
+        PropertiesListModule,
+        PropertyDetailsModule,
         SharedModule,
-        PropertyModule
     ],
     bootstrap: [AppComponent]
 })

@@ -3,15 +3,15 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-import { PropertiesComponent } from './properties.component';
+import { PropertiesListComponent } from './properties-list.component';
 
-describe('PropertiesComponent', () => {
-    let component: PropertiesComponent;
-    let fixture: ComponentFixture<PropertiesComponent>;
+describe('PropertiesListComponent', () => {
+    let component: PropertiesListComponent;
+    let fixture: ComponentFixture<PropertiesListComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [PropertiesComponent],
+            declarations: [PropertiesListComponent],
             imports: [
                 RouterTestingModule,
                 HttpClientTestingModule,
@@ -21,7 +21,7 @@ describe('PropertiesComponent', () => {
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(PropertiesComponent);
+        fixture = TestBed.createComponent(PropertiesListComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

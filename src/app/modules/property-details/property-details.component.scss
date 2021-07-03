@@ -42,6 +42,7 @@
     position: relative;
     border-top: 1px solid $white-smoke;
     padding: $space-2 0;
+    display: block;
 }
 
 .property {
@@ -58,35 +59,6 @@
 
     &__published {
         color: $black-40;
-    }
-}
-
-.details {
-    &__title {
-        font-size: $font-16;
-        margin-bottom: 12px;
-    }
-
-    &__list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        row-gap: $space-2;
-    }
-
-}
-
-.pricingInfo {
-    &__item {
-        font-size: $font-14;
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: $primary;
-
-        strong {
-            color: $black;
-        }
     }
 }
 
@@ -120,3 +92,5 @@
         }
     }
 }
+
+

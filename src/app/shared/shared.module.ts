@@ -5,8 +5,8 @@ import localePt from '@angular/common/locales/pt';
 import { LOCALE_ID } from '@angular/core';
 
 // MODULES
+import { RouterModule } from '@angular/router';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { NgxPaginationModule } from 'ngx-pagination';
 
 // DIRECTIVES
 import { AppShellNoRenderDirective } from './directives/app-shell-norender.directive';
@@ -33,8 +33,8 @@ import { ButtonComponent } from './components/button/button.component';
 registerLocaleData(localePt)
 
 const modules = [
-    CarouselModule,
-    NgxPaginationModule
+    RouterModule,
+    CarouselModule
 ];
 
 const components = [

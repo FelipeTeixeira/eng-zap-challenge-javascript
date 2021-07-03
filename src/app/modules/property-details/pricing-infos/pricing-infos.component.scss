@@ -1,0 +1,16 @@
+@import "~src/assets/scss/variables";
+
+.pricing-info {
+    &__item {
+        font-size: $font-14;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $primary;
+    }
+
+    &__value {
+        color: $black;
+    }
+}

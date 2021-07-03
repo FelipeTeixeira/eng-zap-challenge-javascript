@@ -1,0 +1,14 @@
+@import "~src/assets/scss/variables";
+
+.features {
+    &__title {
+        font-size: $font-16;
+        margin-bottom: 12px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: $space-2;
+    }
+}
