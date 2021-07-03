@@ -27,6 +27,7 @@ import { BusinessTypeComponent } from './components/business-type/business-type.
 import { InfoWithIconComponent } from './components/info-with-icon/info-with-icon.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ButtonComponent } from './components/button/button.component';
+import { PluralPipe } from './pipes/plural.pipe';
 
 registerLocaleData(localePt)
 
@@ -44,6 +45,10 @@ const components = [
     InfoWithIconComponent,
     SpinnerComponent,
     ButtonComponent,
+];
+
+const pipes = [
+    PluralPipe
 ];
 
 const directives = [
@@ -68,11 +73,13 @@ const providers = [
     declarations: [
         ...components,
         ...directives,
+        ...pipes,
     ],
     exports: [
         ...modules,
         ...components,
         ...directives,
+        ...pipes,
     ],
     providers: [
         ...providers,

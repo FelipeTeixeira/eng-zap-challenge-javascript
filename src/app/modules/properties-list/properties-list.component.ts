@@ -1,5 +1,5 @@
 import { ViewportScroller } from '@angular/common';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { MetaTagSeoService } from '../../shared/services/meta-tag-seo.service';
@@ -8,7 +8,8 @@ import { Property } from '../../shared/model/property';
 @Component({
     selector: 'app-properties',
     templateUrl: './properties-list.component.html',
-    styleUrls: ['./properties-list.component.scss']
+    styleUrls: ['./properties-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PropertiesListComponent implements OnInit, AfterViewInit {
     currentPage: number = 1;

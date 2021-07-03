@@ -10,13 +10,14 @@
                 icon="assets/img/icon-area.svg"
                 [description]="property.usableAreas + ' m²'">
             </app-info-with-icon>
+
         </li>
 
         <li class="features__item">
             <app-info-with-icon
                 type="round"
                 icon="assets/img/icon-bathroom.svg"
-                [description]="property.bathrooms + ' Banheiro'">
+                [description]="property.bathrooms | plural: 'Banheiro'">
             </app-info-with-icon>
         </li>
 
@@ -24,7 +25,7 @@
             <app-info-with-icon
                 type="round"
                 icon="assets/img/icon-bed.svg"
-                [description]="property.bedrooms + ' Quartos'">
+                [description]="property.bedrooms | plural: 'Quarto'">
             </app-info-with-icon>
         </li>
 
@@ -32,7 +33,7 @@
             <app-info-with-icon
                 type="round"
                 icon="assets/img/icon-car.svg"
-                [description]="property.parkingSpaces + ' Vagas'">
+                [description]="property.parkingSpaces | plural: 'Vaga'">
             </app-info-with-icon>
         </li>
 
