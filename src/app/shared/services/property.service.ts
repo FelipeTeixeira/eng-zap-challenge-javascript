@@ -36,7 +36,6 @@ export class PropertyService {
             propertiesSimilar.length < qty
                 && item.id !== propertySelected.id
                 && item.pricingInfos.businessType === propertySelected.pricingInfos.businessType
-
                 && propertiesSimilar.push(item);
         });
 

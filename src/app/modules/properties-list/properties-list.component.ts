@@ -23,7 +23,7 @@ export class PropertiesListComponent implements OnInit, AfterViewInit {
         private metaTagSeoService: MetaTagSeoService
     ) { }
 
-    ngOnInit(): void {
+    ngOnInit() {
         this.properties = this.activatedRoute.snapshot.data['resolvedProperties'];
         this.companySelected = this.activatedRoute.snapshot.params['company'];
 
@@ -33,7 +33,7 @@ export class PropertiesListComponent implements OnInit, AfterViewInit {
         this.setTags(this.companySelected);
     }
 
-    ngAfterViewInit(): void {
+    ngAfterViewInit() {
         this.activatedRoute.fragment.pipe(
             first()
         ).subscribe(fragment => this.viewportScroller.scrollToAnchor(fragment));

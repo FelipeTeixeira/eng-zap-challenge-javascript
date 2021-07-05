@@ -9,7 +9,6 @@ import { RouterModule } from '@angular/router';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 // DIRECTIVES
-import { AppShellNoRenderDirective } from './directives/app-shell-norender.directive';
 import { AppShellRenderDirective } from './directives/app-shell-render.directive';
 
 // COMPONENTS
@@ -28,6 +27,7 @@ import { InfoWithIconComponent } from './components/info-with-icon/info-with-ico
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ButtonComponent } from './components/button/button.component';
 import { PluralPipe } from './pipes/plural.pipe';
+import PropertyRulesUtils from './utils/property-rules.util';
 
 registerLocaleData(localePt)
 
@@ -53,7 +53,6 @@ const pipes = [
 
 const directives = [
     AppShellRenderDirective,
-    AppShellNoRenderDirective
 ];
 
 const providers = [
@@ -62,7 +61,8 @@ const providers = [
     CanonicalService,
     MetaTagSeoService,
     CurrencyPipe,
-    DatePipe
+    DatePipe,
+    PropertyRulesUtils
 ]
 
 @NgModule({
@@ -73,13 +73,13 @@ const providers = [
     declarations: [
         ...components,
         ...directives,
-        ...pipes,
+        ...pipes
     ],
     exports: [
         ...modules,
         ...components,
         ...directives,
-        ...pipes,
+        ...pipes
     ],
     providers: [
         ...providers,

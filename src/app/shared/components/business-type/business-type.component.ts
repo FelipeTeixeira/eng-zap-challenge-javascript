@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BusinessTypeComponent implements OnInit {
-    @Input() name: string;
+    @Input() name: 'RENTAL' | 'SALE';;
     constructor() { }
 
     ngOnInit(): void {

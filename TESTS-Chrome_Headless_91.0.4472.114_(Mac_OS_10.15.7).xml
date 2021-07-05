@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome Headless 91.0.4472.114 (Mac OS 10.15.7)" package="" timestamp="2021-07-04T18:49:53" id="0" hostname="BR0C02FJ3VXMD6M" tests="13" errors="0" failures="0" time="0.138">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/91.0.4472.114 Safari/537.36"/>
+  </properties>
+  <testcase name="PluralPipe create an instance" time="0.064" classname="Chrome_Headless_91_0_4472_114_(Mac_OS_10_15_7).PluralPipe"/>
+  <testcase name="SpinnerComponent should create" time="0.014" classname="Chrome_Headless_91_0_4472_114_(Mac_OS_10_15_7).SpinnerComponent"/>
+  <testcase name="PropertyInfoCardComponent should create" time="0.01" classname="Chrome_Headless_91_0_4472_114_(Mac_OS_10_15_7).PropertyInfoCardComponent"/>
+  <testcase name="FeaturesComponent should create" time="0.005" classname="Chrome_Headless_91_0_4472_114_(Mac_OS_10_15_7).FeaturesComponent"/>
+  <testcase name="ButtonComponent should create" time="0.004" classname="Chrome_Headless_91_0_4472_114_(Mac_OS_10_15_7).ButtonComponent"/>
+  <testcase name="InfoWithIconComponent should create" time="0.005" classname="Chrome_Headless_91_0_4472_114_(Mac_OS_10_15_7).InfoWithIconComponent"/>
+  <testcase name="HeaderComponent should create" time="0.005" classname="Chrome_Headless_91_0_4472_114_(Mac_OS_10_15_7).HeaderComponent"/>
+  <testcase name="BusinessTypeComponent should testar o @Input" time="0.003" classname="Chrome_Headless_91_0_4472_114_(Mac_OS_10_15_7).BusinessTypeComponent"/>
+  <testcase name="GalleryComponent should create" time="0.004" classname="Chrome_Headless_91_0_4472_114_(Mac_OS_10_15_7).GalleryComponent"/>
+  <testcase name="PropertiesListComponent should create" time="0.012" classname="Chrome_Headless_91_0_4472_114_(Mac_OS_10_15_7).PropertiesListComponent"/>
+  <testcase name="PropertyDetailsComponent should create" time="0.006" classname="Chrome_Headless_91_0_4472_114_(Mac_OS_10_15_7).PropertyDetailsComponent"/>
+  <testcase name="PricingInfosComponent should create" time="0.003" classname="Chrome_Headless_91_0_4472_114_(Mac_OS_10_15_7).PricingInfosComponent"/>
+  <testcase name="ButtonRoundComponent should create" time="0.003" classname="Chrome_Headless_91_0_4472_114_(Mac_OS_10_15_7).ButtonRoundComponent"/>
+  <system-out>
+    <![CDATA[Chrome Headless 91.0.4472.114 (Mac OS 10.15.7) ERROR: 'NG0304: 'app-gallery' is not a known element:
+1. If 'app-gallery' is an Angular component, then verify that it is part of this module.
+2. If 'app-gallery' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 91.0.4472.114 (Mac OS 10.15.7) ERROR: 'NG0304: 'app-business-type' is not a known element:
+1. If 'app-business-type' is an Angular component, then verify that it is part of this module.
+2. If 'app-business-type' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 91.0.4472.114 (Mac OS 10.15.7) ERROR: 'NG0303: Can't bind to 'photos' since it isn't a known property of 'app-gallery'.'
+,Chrome Headless 91.0.4472.114 (Mac OS 10.15.7) ERROR: 'NG0303: Can't bind to 'name' since it isn't a known property of 'app-business-type'.'
+,Chrome Headless 91.0.4472.114 (Mac OS 10.15.7) ERROR: 'NG0304: 'app-info-with-icon' is not a known element:
+1. If 'app-info-with-icon' is an Angular component, then verify that it is part of this module.
+2. If 'app-info-with-icon' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 91.0.4472.114 (Mac OS 10.15.7) ERROR: 'NG0304: 'app-info-with-icon' is not a known element:
+1. If 'app-info-with-icon' is an Angular component, then verify that it is part of this module.
+2. If 'app-info-with-icon' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 91.0.4472.114 (Mac OS 10.15.7) ERROR: 'NG0304: 'app-info-with-icon' is not a known element:
+1. If 'app-info-with-icon' is an Angular component, then verify that it is part of this module.
+2. If 'app-info-with-icon' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 91.0.4472.114 (Mac OS 10.15.7) ERROR: 'NG0304: 'app-info-with-icon' is not a known element:
+1. If 'app-info-with-icon' is an Angular component, then verify that it is part of this module.
+2. If 'app-info-with-icon' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 91.0.4472.114 (Mac OS 10.15.7) ERROR: 'NG0303: Can't bind to 'description' since it isn't a known property of 'app-info-with-icon'.'
+,Chrome Headless 91.0.4472.114 (Mac OS 10.15.7) ERROR: 'NG0303: Can't bind to 'description' since it isn't a known property of 'app-info-with-icon'.'
+,Chrome Headless 91.0.4472.114 (Mac OS 10.15.7) ERROR: 'NG0303: Can't bind to 'description' since it isn't a known property of 'app-info-with-icon'.'
+,Chrome Headless 91.0.4472.114 (Mac OS 10.15.7) ERROR: 'NG0303: Can't bind to 'description' since it isn't a known property of 'app-info-with-icon'.'
+,Chrome Headless 91.0.4472.114 (Mac OS 10.15.7) ERROR: 'NG0304: 'app-button-round' is not a known element:
+1. If 'app-button-round' is an Angular component, then verify that it is part of this module.
+2. If 'app-button-round' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 91.0.4472.114 (Mac OS 10.15.7) ERROR: 'NG0304: 'owl-carousel-o' is not a known element:
+1. If 'owl-carousel-o' is an Angular component, then verify that it is part of this module.
+2. If 'owl-carousel-o' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome Headless 91.0.4472.114 (Mac OS 10.15.7) ERROR: 'NG0303: Can't bind to 'options' since it isn't a known property of 'owl-carousel-o'.'
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

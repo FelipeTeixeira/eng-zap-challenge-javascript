@@ -2,36 +2,25 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { first, map } from 'rxjs/operators';
-import { makeStateKey, TransferState } from '@angular/platform-browser';
+import { TransferState } from '@angular/platform-browser';
 import { PropertyService } from './property.service';
 import { Property } from '../model/property';
-import {
-    hasLatLon,
-    isRental,
-    isSale,
-    isMinimumRentalValue,
-    isMinimumSaleValue,
-    isMinimumAreaValue,
-    isMaximumRentalValue,
-    isMaximumSaleValue,
-    isMaximumCondoFeeValue,
-    isBoundingBox
-} from '../utils/property-rules.util';
+import PropertyRulesUtils from '../utils/property-rules.util';
 
 @Injectable()
 export class PropertiesResolver implements Resolve<Property[]> {
     private predicates = {
         'zap-imoveis': (item: Property) => {
-            const isAvailableForRental = hasLatLon(item)
-                && isRental(item)
-                && isMinimumRentalValue(item)
+            const isAvailableForRental = this.utils.hasLatLon(item)
+                && this.utils.isRental(item)
+                && this.utils.isMinimumRentalValue(item)
 
-            const isAvailableForSale = hasLatLon(item)
-                && isSale(item)
-                && isMinimumSaleValue(item)
-                && isMinimumAreaValue(item);
+            const isAvailableForSale = this.utils.hasLatLon(item)
+                && this.utils.isSale(item)
+                && this.utils.isMinimumSaleValue(item)
+                && this.utils.isMinimumAreaValue(item);
 
-            if (isAvailableForSale && isBoundingBox(item)) {
+            if (isAvailableForSale && this.utils.isBoundingBox(item)) {
                 item.pricingInfos.price = Math.abs((10 / 100 - 1) * Number(item.pricingInfos.price));
             }
 
@@ -39,16 +28,16 @@ export class PropertiesResolver implements Resolve<Property[]> {
         },
 
         'viva-real': (item: Property) => {
-            const isAvailableForRental = hasLatLon(item)
-                && isRental(item)
-                && isMaximumRentalValue(item)
-                && isMaximumCondoFeeValue(item);
+            const isAvailableForRental = this.utils.hasLatLon(item)
+                && this.utils.isRental(item)
+                && this.utils.isMaximumRentalValue(item)
+                && this.utils.isMaximumCondoFeeValue(item);
 
-            const isAvailableForSale = hasLatLon(item)
-                && isSale(item)
-                && isMaximumSaleValue(item);
+            const isAvailableForSale = this.utils.hasLatLon(item)
+                && this.utils.isSale(item)
+                && this.utils.isMaximumSaleValue(item);
 
-            if (isAvailableForRental && isBoundingBox(item)) {
+            if (isAvailableForRental && this.utils.isBoundingBox(item)) {
                 item.pricingInfos.price = ((30 / 100) + 1) * Number(item.pricingInfos.price);
             }
 
@@ -59,6 +48,7 @@ export class PropertiesResolver implements Resolve<Property[]> {
     constructor(
         private propertyService: PropertyService,
         private transferState: TransferState,
+        private utils: PropertyRulesUtils
     ) { }
 
     resolve(
