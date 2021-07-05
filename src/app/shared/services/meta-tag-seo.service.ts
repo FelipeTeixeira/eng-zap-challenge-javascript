@@ -7,7 +7,7 @@ import { Meta, Title } from '@angular/platform-browser';
 export class MetaTagSeoService {
 
     constructor(
-        @Inject(DOCUMENT) private dom,
+        @Inject(DOCUMENT) private dom: Document,
         private title: Title,
         private meta: Meta
     ) { }

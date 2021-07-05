@@ -9,7 +9,7 @@ import PropertyRulesUtils from '../utils/property-rules.util';
 
 @Injectable()
 export class PropertiesResolver implements Resolve<Property[]> {
-    private predicates = {
+    private predicates: any = {
         'zap-imoveis': (item: Property) => {
             const isAvailableForRental = this.utils.hasLatLon(item)
                 && this.utils.isRental(item)
@@ -53,7 +53,7 @@ export class PropertiesResolver implements Resolve<Property[]> {
 
     resolve(
         route: ActivatedRouteSnapshot,
-        state: RouterStateSnapshot
+        _state: RouterStateSnapshot
     ): Observable<Property[]> {
 
         const company = route.params['company'];

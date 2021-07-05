@@ -10,7 +10,7 @@ import { isPlatformServer } from '@angular/common';
 export class AppShellRenderDirective implements OnInit {
 
     constructor(
-        @Inject(PLATFORM_ID) private platformId,
+        @Inject(PLATFORM_ID) private platformId: any,
         private templateRef: TemplateRef<any>,
         private viewContainer: ViewContainerRef
     ) { }

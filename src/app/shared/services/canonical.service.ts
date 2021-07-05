@@ -5,7 +5,7 @@ import { DOCUMENT } from '@angular/common';
 
 export class CanonicalService {
 
-    constructor(@Inject(DOCUMENT) private dom) { }
+    constructor(@Inject(DOCUMENT) private dom: Document) { }
 
     setCanonicalURL(url?: string) {
         const canURL = url == undefined ? this.dom.URL : url;
