@@ -4,6 +4,7 @@ Dado o desafio em (https://olxbr.github.io/cultura/challenges/frontend.html), fo
 
 ## Pré-requisitos
 https://nodejs.org/en/
+
 https://angular.io/cli
 
 
