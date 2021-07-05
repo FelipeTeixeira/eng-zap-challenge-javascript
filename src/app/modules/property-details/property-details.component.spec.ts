@@ -6,6 +6,7 @@ import { PropertyDetailsModule } from './property-details.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TransferState } from '@angular/platform-browser';
 import { PropertyService } from 'src/app/shared/services/property.service';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('PropertyDetailsComponent', () => {
     let component: PropertyDetailsComponent;
@@ -18,6 +19,7 @@ describe('PropertyDetailsComponent', () => {
                 PropertyDetailsModule,
                 HttpClientModule,
                 RouterTestingModule,
+                SharedModule
             ],
             providers: [
                 {
