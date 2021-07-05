@@ -19,11 +19,13 @@ http://eng-zap-challenge-javascript.herokuapp.com **ou** https://eng-zap-challen
 
 Como a imagem do imóvel está sem HTTPS, o primeiro link está melhor para visualizar.
 Para subir as alterações para produção:
+
 `git push heroku  master` (não vai funcionar pois precisa estar com usuário configurado no heroku, apenas o meu está por agora)
 
 
 ## Testes
 Para rodar os testes basta executar o seguinte comando:
+
 `npm run test-coverage`
 
 
