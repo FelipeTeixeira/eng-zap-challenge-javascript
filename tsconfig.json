@@ -15,14 +15,6 @@
         "lib": [
             "es2018",
             "dom"
-        ],
-        "noImplicitAny": true,
-        "emitDecoratorMetadata": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "strict": true,
-        "strictNullChecks": false,
-        "strictFunctionTypes": true,
-        "alwaysStrict": true
+        ]
     }
 }

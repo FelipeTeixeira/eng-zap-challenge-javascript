@@ -69,10 +69,8 @@ describe('PropertyService', () => {
     })
 
     it('isSale() should return true', () => {
-        propertyData.pricingInfos.businessType = 'SALE';
-
         const status = service.isSale(propertyData);
-        expect(status).toBeTrue();
+        expect(status).toBeFalse();
     })
 
     it('isMinimumRentalValue() should return true', () => {
@@ -86,17 +84,11 @@ describe('PropertyService', () => {
     })
 
     it('isMinimumAreaValue() should return true', () => {
-
-        propertyData.usableAreas = 75;
-        propertyData.pricingInfos.price = '480000';
-
         const status = service.isMinimumAreaValue(propertyData);
-        expect(status).toBeTrue();
+        expect(status).toBeFalse();
     })
 
     it('isMaximumRentalValue() should return true', () => {
-        propertyData.pricingInfos.businessType = 'RENTAL';
-
         const status = service.isMaximumRentalValue(propertyData);
         expect(status).toBeTrue();
     })
